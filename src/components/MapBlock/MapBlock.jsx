@@ -20,7 +20,6 @@ function MapBlock(props) {
     };
 
     useEffect(() => {
-        console.log({ ymaps, mapRef });
         if (!ymaps || !mapRef.current) {
             return;
         }

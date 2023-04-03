@@ -1,4 +1,4 @@
-import styles from './CreateInstitution_Institution.module.scss';
+import styles from './ReuqestInstitution.module.scss';
 
 import { useState, useRef } from 'react';
 
@@ -8,12 +8,8 @@ import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requ
 import { YMaps } from '@pbe/react-yandex-maps';
 import MapBlock from '../MapBlock/MapBlock';
 
-function CreateInstitution_Institution() {
+function ReuqestInstitution() {
     const dispatch = useDispatch();
-
-    const [street, setStreet] = useState('');
-    const [house, setHouse] = useState('');
-    const [incorrectAddress, setIncorrectAddress] = useState(false);
 
     const nameRef = useRef(null);
     const emailRef = useRef(null);
@@ -66,15 +62,11 @@ function CreateInstitution_Institution() {
                         load: 'package.full',
                         apikey: `${process.env.REACT_APP_API_MAP}`,
                     }}>
-                    <MapBlock
-                        setIncorrectAddress={() => setIncorrectAddress(false)}
-                        setStreet={setStreet}
-                        setHouse={setHouse}
-                    />
+                    <MapBlock setIncorrectAddress={() => setIncorrectAddress(false)} />
                 </YMaps>
             </div>
         </>
     );
 }
 
-export default CreateInstitution_Institution;
+export default ReuqestInstitution;

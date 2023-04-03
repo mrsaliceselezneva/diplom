@@ -1,4 +1,4 @@
-import styles from './CreateInstitution_Admin.module.scss';
+import styles from './ReuqestAdmin.module.scss';
 
 import { useDispatch } from 'react-redux';
 import React, { useRef } from 'react';
@@ -11,7 +11,7 @@ import {
     setAdminPhone,
 } from '../../redux/slices/requestSlice';
 
-function CreateInstitution_Admin() {
+function ReuqestAdmin() {
     const dispatch = useDispatch();
 
     const nameRef = useRef(null);
@@ -135,4 +135,4 @@ function CreateInstitution_Admin() {
     );
 }
 
-export default CreateInstitution_Admin;
+export default ReuqestAdmin;

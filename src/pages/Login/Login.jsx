@@ -1,12 +1,12 @@
-import styles from './Login.module.scss';
-
 import axios from 'axios';
 import React, { useRef } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { setRefreshToken } from '../../redux/slices/tokenSlice';
 import { Link } from 'react-router-dom';
+
+import styles from './Login.module.scss';
 
 function Login() {
     const dispatch = useDispatch();
@@ -66,7 +66,7 @@ function Login() {
                             />
                         </label>
                     </div>
-                    <Link to="/week">
+                    <Link to="/">
                         <label className={styles.wrapper__form__main__label}>
                             <input
                                 type="submit"
