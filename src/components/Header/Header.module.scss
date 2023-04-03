@@ -40,6 +40,24 @@ $header-height: 80px;
     }
 }
 
+@mixin red {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff6e4a;
+    border-radius: 8px;
+    padding: 8px;
+    @include text(700, 16px, 20px, #fffff0);
+    position: absolute;
+    right: 110px;
+    top: 70px;
+    opacity: 0;
+    transition: 2s;
+}
+
+@mixin red_hover {
+    animation: anim_show 1s linear forwards;
+}
+
 .wrapper {
     display: flex;
     align-items: center;
@@ -98,7 +116,7 @@ $header-height: 80px;
                 }
             }
         }
-        &__right {
+        &__menu {
             display: flex;
             align-items: center;
 
@@ -167,40 +185,25 @@ $header-height: 80px;
                 transition: all 0.3s ease-in;
             }
 
-            &__personal {
-                display: flex;
-                flex-direction: column;
-                background-color: #ff6e4a;
-                border-radius: 8px;
-                padding: 8px;
-                @include text(700, 16px, 20px, #fffff0);
-                position: absolute;
-                right: 110px;
-                top: 70px;
-                opacity: 0;
-                transition: 2s;
+            &__left {
+                @include red();
+            }
+            &__add:hover ~ &__left {
+                @include red_hover();
             }
 
-            &__user:hover ~ &__personal {
-                animation: anim_show 1s linear forwards;
+            &__central {
+                @include red();
+            }
+            &__user:hover ~ &__central {
+                @include red_hover();
             }
 
-            &__institution {
-                display: flex;
-                flex-direction: column;
-                background-color: #ff6e4a;
-                border-radius: 8px;
-                padding: 8px;
-                @include text(700, 16px, 20px, #fffff0);
-                position: absolute;
-                right: 110px;
-                top: 70px;
-                opacity: 0;
-                transition: 2s;
+            &__right {
+                @include red();
             }
-
-            &__add:hover ~ &__institution {
-                animation: anim_show 1s linear forwards;
+            &__login:hover ~ &__right {
+                @include red_hover();
             }
         }
     }

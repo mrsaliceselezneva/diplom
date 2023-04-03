@@ -1,7 +1,7 @@
-import styles from './CreateInstitution.module.scss';
+import styles from './Reuqest.module.scss';
 
-import CreateInstitution_Admin from '../../components/CreateInstitution_Admin/CreateInstitution_Admin';
-import CreateInstitution_Institution from '../../components/CreateInstitution_Institution/CreateInstitution_Institution';
+import ReuqestAdmin from '../../components/ReuqestAdmin/ReuqestAdmin';
+import ReuqestInstitution from '../../components/ReuqestInstitution/ReuqestInstitution';
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -9,7 +9,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { setClear } from '../../redux/slices/requestSlice';
 
-function CreateInstitution() {
+function Reuqest() {
     const dispatch = useDispatch();
     const {
         adminName,
@@ -69,8 +69,8 @@ function CreateInstitution() {
                     </div>
                 </div>
                 <div className={styles.wrapper__form__main}>
-                    {!active ? <CreateInstitution_Institution /> : null}
-                    {active ? <CreateInstitution_Admin /> : null}
+                    {!active ? <ReuqestInstitution /> : null}
+                    {active ? <ReuqestAdmin /> : null}
                 </div>
                 <label className={styles.wrapper__form__label}>
                     <input
@@ -85,4 +85,4 @@ function CreateInstitution() {
     );
 }
 
-export default CreateInstitution;
+export default Reuqest;
