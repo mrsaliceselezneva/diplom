@@ -1,0 +1,98 @@
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+
+@mixin text($w, $s, $l, $c) {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: $w;
+    font-size: $s;
+    line-height: $l;
+    color: $c;
+}
+
+@mixin title($color, $back) {
+    @include text(600, 22px, 22px, $color);
+    background-color: $back;
+    margin-bottom: 16px;
+    padding: 5px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    margin-bottom: 0px;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    background-color: rgba(253, 244, 227, 1);
+    border-radius: 20px;
+    padding: 20px;
+
+    &__title {
+        @include text(600, 26px, 26px, #009b76);
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 2vh;
+
+        &__top {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            border-bottom: 1px solid #009b76;
+
+            &__title {
+                @include title(#009b76, #fdf4e3);
+            }
+
+            &__select_title {
+                @include title(#fefdfc, #009b76);
+            }
+        }
+
+        &__main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        &__label {
+            display: flex;
+            flex-direction: column;
+            @include text(600, 18px, 18px, #009b76);
+            margin-bottom: 10px;
+
+            &__submit {
+                margin-left: auto;
+                margin-right: auto;
+                width: 200px;
+                height: 30px;
+                border: none;
+                border-radius: 8px;
+                background: #009b76;
+                @include text(600, 18px, 18px, #fefdfc);
+            }
+
+            &__submit:focus {
+                outline: none !important;
+                box-shadow: -3px 3px 5px rgba(122, 122, 122, 0.5);
+            }
+
+            &__submit:hover {
+                background: rgba(0, 155, 118, 0.8);
+                @include text(600, 18px, 18px, rgba(253, 244, 227, 0.8));
+            }
+        }
+    }
+}

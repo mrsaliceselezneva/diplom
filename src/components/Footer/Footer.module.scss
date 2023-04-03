@@ -1,0 +1,89 @@
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+
+@mixin text($w, $s, $l, $c) {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: $w;
+    font-size: $s;
+    line-height: $l;
+    color: $c;
+}
+
+$footer-height: 80px;
+
+.footer {
+    height: $footer-height;
+    background-color: rgba(0, 155, 118, 0.3);
+    box-shadow: 0 0 5px 2px #009b76;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 60px;
+    flex-shrink: 0;
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: calc(280px * 4 + 30px * 3);
+        @media (max-width: 1400px) {
+            width: calc(280px * 3 + 30px * 2);
+        }
+        @media (max-width: 1030px) {
+            width: calc(280px * 2 + 30px * 1);
+        }
+        @media (max-width: 620px) {
+            width: calc(280px * 1 + 30px * 0);
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 0;
+
+        &__personal_info {
+            display: flex;
+            flex-direction: column;
+
+            &__fio {
+                @include text(500, 15px, 14px, #009b76);
+                margin-bottom: 5px;
+            }
+
+            &__phone {
+                @include text(600, 15px, 14px, #009b76);
+            }
+        }
+
+        &__background_icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+
+            height: 50px;
+            width: 50px;
+            border-radius: 12px;
+
+            &__icon {
+                height: 35px;
+                width: 35px;
+                color: #009b76;
+                cursor: pointer;
+            }
+        }
+
+        &__background_icon:hover {
+            background-color: #fdf4e3;
+
+            &__icon {
+                color: #009b76;
+            }
+        }
+    }
+}

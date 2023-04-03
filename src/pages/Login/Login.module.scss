@@ -1,0 +1,145 @@
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+
+@mixin text($w, $s, $l, $c) {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: $w;
+    font-size: $s;
+    line-height: $l;
+    color: $c;
+}
+
+@mixin title($color, $back) {
+    @include text(600, 22px, 22px, $color);
+    background-color: $back;
+    margin-bottom: 16px;
+    padding: 5px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    margin-bottom: 0px;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.login {
+    min-height: calc(100vh - 80px - 80px - 60px);
+}
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70vw;
+    background-color: rgba(253, 244, 227, 1);
+    border-radius: 20px;
+    padding: 20px;
+    flex: 1 0 auto;
+
+    &__title {
+        @include text(600, 26px, 26px, #009b76);
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 2vh;
+
+        &__top {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            border-bottom: 1px solid #009b76;
+
+            &__title {
+                @include title(#009b76, #fdf4e3);
+            }
+
+            &__select_title {
+                @include title(#fefdfc, #009b76);
+            }
+        }
+
+        &__main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+
+            &__label {
+                display: flex;
+                flex-direction: column;
+                @include text(600, 18px, 18px, #009b76);
+                margin-bottom: 10px;
+
+                &__top {
+                    width: 200px;
+                    height: 26px;
+
+                    &__title {
+                        display: flex;
+                        justify-content: center;
+                        width: auto;
+                        height: 100%;
+                        color: #fefdfc;
+                        background-color: #009b76;
+                        border-top-left-radius: 8px;
+                        border: 1px solid;
+                        border-bottom-color: rgba(253, 244, 227, 1);
+                        border-top-right-radius: 8px;
+                        padding: 3px;
+                        box-sizing: border-box;
+                    }
+                }
+
+                &__input {
+                    width: 400px;
+                    height: 32px;
+                    border: 2px solid;
+                    border-color: #009b76;
+                    border-radius: 8px;
+                    border-top-left-radius: 0;
+                    background: white;
+                    @include text(600, 18px, 18px, #009b76);
+                    box-sizing: border-box;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                &__input:focus {
+                    outline: none !important;
+                }
+
+                &__submit {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 200px;
+                    height: 30px;
+                    border: none;
+                    border-radius: 8px;
+                    background: #009b76;
+                    @include text(600, 18px, 18px, #fefdfc);
+                }
+
+                &__submit:focus {
+                    outline: none !important;
+                    box-shadow: -3px 3px 5px rgba(122, 122, 122, 0.5);
+                }
+
+                &__submit:hover {
+                    background: rgba(0, 155, 118, 0.8);
+                    @include text(600, 18px, 18px, rgba(253, 244, 227, 0.8));
+                }
+            }
+        }
+    }
+}
