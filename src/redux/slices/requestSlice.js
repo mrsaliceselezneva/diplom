@@ -19,7 +19,7 @@ const requestSlice = createSlice({
         setAdminName(state, action) {
             state.adminName = action.payload;
         },
-        setAdminLastname(state, action) {
+        setAdminLastName(state, action) {
             state.adminLastname = action.payload;
         },
         setAdminPatronymic(state, action) {
@@ -60,7 +60,7 @@ const requestSlice = createSlice({
 
 export const {
     setAdminName,
-    setAdminLastname,
+    setAdminLastName,
     setAdminPatronymic,
     setAdminEmail,
     setAdminPhone,

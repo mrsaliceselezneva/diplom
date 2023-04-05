@@ -3,8 +3,8 @@ import React, { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { setRefreshToken, setAccessToken } from '../../redux/slices/tokenSlice';
 import { Link } from 'react-router-dom';
+import { setRefreshToken, setAccessToken } from '../../redux/slices/tokenSlice';
 
 import styles from './Login.module.scss';
 

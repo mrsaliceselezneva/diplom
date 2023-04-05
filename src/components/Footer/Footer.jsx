@@ -1,7 +1,7 @@
-import styles from './Footer.module.scss';
-
 import { SlSocialVkontakte } from 'react-icons/sl';
 import { FaTelegramPlane } from 'react-icons/fa';
+
+import styles from './Footer.module.scss';
 
 function Footer() {
     return (

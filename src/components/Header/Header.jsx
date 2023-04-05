@@ -8,23 +8,23 @@ import { setLogout } from '../../redux/slices/tokenSlice';
 
 import styles from './Header.module.scss';
 
+const institutionInfo = [
+    'Код Успеха',
+    'ул. Федерации, 148',
+    'poluvesov.artyom@gmail.com',
+    '89278070727',
+];
+const personalInfo = [
+    'Полувесов',
+    'Артём',
+    'Алексеевич',
+    'poluvesov.artyom@gmail.com',
+    '89278070727',
+];
+
 function Header() {
     const dispatch = useDispatch();
     const { refreshToken } = useSelector((state) => state.tokenReducer);
-
-    const institutionInfo = [
-        'Код Успеха',
-        'ул. Федерации, 148',
-        'poluvesov.artyom@gmail.com',
-        '89278070727',
-    ];
-    const personalInfo = [
-        'Полувесов',
-        'Артём',
-        'Алексеевич',
-        'poluvesov.artyom@gmail.com',
-        '89278070727',
-    ];
 
     return (
         <div className={styles.wrapper}>

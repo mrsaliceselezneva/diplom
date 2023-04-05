@@ -1,10 +1,9 @@
-import styles from './ReuqestAdmin.module.scss';
-
 import { useDispatch } from 'react-redux';
 import React, { useRef } from 'react';
+import styles from './ReuqestAdmin.module.scss';
 import {
     setAdminEmail,
-    setAdminLastname,
+    setAdminLastName,
     setAdminName,
     setAdminPassword,
     setAdminPatronymic,
@@ -33,7 +32,7 @@ function ReuqestAdmin() {
         let val;
         if (phoneRef.current.value.length === 1) val = phoneRef.current.value.replace(/[^\d]/g, '');
         else val = phoneRef.current.value.replace(/[^\d]/g, '').slice(1);
-        if (val.length < 4) return '+7 (' + val;
+        if (val.length < 4) return `+7 (${val}`;
         if (val.length < 7) return `+7 (${val.slice(0, 3)}) ${val.slice(3)}`;
         return `+7 (${val.slice(0, 3)}) ${val.slice(3, 6)}-${val.slice(6, 10)}`;
     }
@@ -51,7 +50,7 @@ function ReuqestAdmin() {
                     ref={lastnameRef}
                     onChange={() => {
                         lastnameRef.current.value = normalizeText(lastnameRef.current.value);
-                        dispatch(setAdminLastname(lastnameRef.current.value));
+                        dispatch(setAdminLastName(lastnameRef.current.value));
                     }}
                 />
             </label>

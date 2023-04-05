@@ -1,8 +1,7 @@
-import styles from './AdminAddInstitution.module.scss';
-
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
+import styles from './AdminAddInstitution.module.scss';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
 function AdminAddInstitution() {
@@ -60,7 +59,7 @@ function AdminAddInstitution() {
                             className={styles.wrapper__institution__label__input}
                             placeholder="адрес"
                             ref={addressRef}
-                            onChange={() => {}}
+                            onChange={() => { }}
                         />
                     </label>
                     <label className={styles.wrapper__institution__label}>

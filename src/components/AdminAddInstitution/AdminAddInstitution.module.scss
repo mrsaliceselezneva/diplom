@@ -40,7 +40,7 @@
                     background-color: #009b76;
                     border-top-left-radius: 8px;
                     border: 1px solid;
-                    border-bottom-color: rgba(253, 244, 227, 1);
+                    border-bottom-color: #fdf4e3;
                     border-top-right-radius: 8px;
                     padding: 3px;
                     box-sizing: border-box;
@@ -68,12 +68,13 @@
             &__submit {
                 margin-left: auto;
                 margin-right: auto;
+                margin-top: 10px;
                 width: 140px;
                 height: 30px;
                 border: none;
                 border-radius: 8px;
-                background: #009b76;
-                @include text(600, 18px, 18px, rgba(253, 244, 227, 1));
+                background-color: #ff6e4a;
+                @include text(600, 18px, 18px, white);
             }
 
             &__submit:focus {
@@ -82,8 +83,7 @@
             }
 
             &__submit:hover {
-                background: rgba(0, 155, 118, 0.8);
-                @include text(600, 18px, 18px, rgba(253, 244, 227, 0.8));
+                background: rgba(0, 155, 118, 0.4);
             }
         }
     }

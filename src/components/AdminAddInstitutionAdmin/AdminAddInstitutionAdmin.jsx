@@ -1,6 +1,5 @@
+import { useRef } from 'react';
 import styles from './AdminAddInstitutionAdmin.module.scss';
-
-import { useState, useRef } from 'react';
 
 function AdminAddInstitutionAdmin() {
     const nameRef = useRef(null);
@@ -22,35 +21,34 @@ function AdminAddInstitutionAdmin() {
         let val;
         if (phoneRef.current.value.length === 1) val = phoneRef.current.value.replace(/[^\d]/g, '');
         else val = phoneRef.current.value.replace(/[^\d]/g, '').slice(1);
-        if (val.length < 4) return '+7 (' + val;
+        if (val.length < 4) {
+            return `+7 (${val}`;
+        }
         if (val.length < 7) return `+7 (${val.slice(0, 3)}) ${val.slice(3)}`;
         return `+7 (${val.slice(0, 3)}) ${val.slice(3, 6)}-${val.slice(6, 10)}`;
     }
-    const v = 1;
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__institution}>
                 <form>
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                фамилия
-                            </div>
+                    <div className={styles.wrapper__institution__label__top}>
+                        <div className={styles.wrapper__institution__label__top__title}>
+                            фамилия
                         </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="Фамилия"
-                            ref={lastnameRef}
-                            onChange={() => {
-                                lastnameRef.current.value = normalizeText(
-                                    lastnameRef.current.value,
-                                );
-                                dispatch(setAdminLastname(lastnameRef.current.value));
-                            }}
-                        />
-                    </label>
+                    </div>
+                    <input
+                        type="text"
+                        className={styles.wrapper__institution__label__input}
+                        placeholder="Фамилия"
+                        ref={lastnameRef}
+                        onChange={() => {
+                            lastnameRef.current.value = normalizeText(
+                                lastnameRef.current.value,
+                            );
+                            // dispatch(setAdminLastname(lastnameRef.current.value));
+                        }}
+                    />
 
                     <label className={styles.wrapper__institution__label}>
                         <div className={styles.wrapper__institution__label__top}>
@@ -65,7 +63,7 @@ function AdminAddInstitutionAdmin() {
                             ref={nameRef}
                             onChange={() => {
                                 nameRef.current.value = normalizeText(nameRef.current.value);
-                                dispatch(setAdminName(nameRef.current.value));
+                                // dispatch(setAdminName(nameRef.current.value));
                             }}
                         />
                     </label>
@@ -100,7 +98,7 @@ function AdminAddInstitutionAdmin() {
                             className={styles.wrapper__institution__label__input}
                             placeholder="email"
                             ref={emailRef}
-                            onChange={() => {}}
+                            onChange={() => { }}
                         />
                     </label>
 
@@ -132,7 +130,7 @@ function AdminAddInstitutionAdmin() {
                             className={styles.wrapper__institution__label__input}
                             placeholder="Пароль"
                             ref={passwordRef}
-                            onChange={() => {}}
+                            onChange={() => { }}
                         />
                     </label>
                     <label className={styles.wrapper__institution__label}>

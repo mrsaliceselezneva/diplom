@@ -1,12 +1,12 @@
-import styles from './Reuqest.module.scss';
-
-import ReuqestAdmin from '../../components/ReuqestAdmin/ReuqestAdmin';
-import ReuqestInstitution from '../../components/ReuqestInstitution/ReuqestInstitution';
-
 import { useState } from 'react';
 import axios from 'axios';
-
 import { useSelector, useDispatch } from 'react-redux';
+
+import ReuqestAdmin from 'components/ReuqestAdmin/ReuqestAdmin';
+import ReuqestInstitution from 'components/ReuqestInstitution/ReuqestInstitution';
+import styles from './Reuqest.module.scss';
+
+
 import { setClear } from '../../redux/slices/requestSlice';
 
 function Reuqest() {
@@ -27,18 +27,18 @@ function Reuqest() {
 
     function send() {
         const data = {
-            adminName: adminName,
-            adminLastname: adminLastname,
-            adminPatronymic: adminPatronymic,
-            adminEmail: adminEmail,
-            adminPhone: adminPhone,
-            adminPassword: adminPassword,
-            institutionName: institutionName,
-            institutionEmail: institutionEmail,
-            institutionAddress: institutionAddress,
+            adminName,
+            adminLastname,
+            adminPatronymic,
+            adminEmail,
+            adminPhone,
+            adminPassword,
+            institutionName,
+            institutionEmail,
+            institutionAddress,
         };
         console.log(data);
-        axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then((response) => {
+        axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then(() => {
             dispatch(setClear);
         });
     }

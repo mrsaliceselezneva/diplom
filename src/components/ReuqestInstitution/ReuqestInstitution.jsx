@@ -1,11 +1,11 @@
-import styles from './ReuqestInstitution.module.scss';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
+import { YMaps } from '@pbe/react-yandex-maps';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
-import { YMaps } from '@pbe/react-yandex-maps';
+import styles from './ReuqestInstitution.module.scss';
 import MapBlock from '../MapBlock/MapBlock';
 
 function ReuqestInstitution() {
@@ -13,13 +13,6 @@ function ReuqestInstitution() {
 
     const nameRef = useRef(null);
     const emailRef = useRef(null);
-
-    function normalizeText(value) {
-        if (!value) return '';
-        const val = value.replace(/[^а-яёА-ЯЁ]/u, '');
-        if (val.length > 0) return val[0].toUpperCase() + val.slice(1).toLowerCase();
-        return '';
-    }
 
     return (
         <>
@@ -47,9 +40,7 @@ function ReuqestInstitution() {
                     className={styles.label__input}
                     placeholder="email"
                     ref={emailRef}
-                    onChange={() => {
-                        dispatch(setInstitutionEmail(emailRef.current.value));
-                    }}
+                    onChange={() => dispatch(setInstitutionEmail(emailRef.current.value))}
                 />
             </label>
             <div className={styles.label}>
@@ -62,7 +53,7 @@ function ReuqestInstitution() {
                         load: 'package.full',
                         apikey: `${process.env.REACT_APP_API_MAP}`,
                     }}>
-                    <MapBlock setIncorrectAddress={() => setIncorrectAddress(false)} />
+                    <MapBlock />
                 </YMaps>
             </div>
         </>
