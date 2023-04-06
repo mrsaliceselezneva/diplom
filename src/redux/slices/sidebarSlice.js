@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     selectFilter: null,
-    linkFilter: null,
+    linkFilter: '',
 };
 
 const sidebarSlice = createSlice({
