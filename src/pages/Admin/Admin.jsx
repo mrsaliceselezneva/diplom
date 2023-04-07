@@ -29,14 +29,14 @@ function Admin() {
                     {selectFilter === 'организации' ?
                         <div onClick={() => setActiveButton(true)}>
                             <AdminAddButton
-                                setSelectAdd={() => { dispatch(setSelectFilter('организации')); dispatch(setLinkFilter('')) }}
+                                setSelectAdd={() => { dispatch(setSelectFilter('организации')); }}
                                 title='добавить организацию'
                             />
                         </div>
                         :
                         <div onClick={() => setActiveButton(true)}>
                             <AdminAddButton
-                                setSelectAdd={() => { dispatch(setSelectFilter('пользователи')); dispatch(setLinkFilter('')) }}
+                                setSelectAdd={() => { dispatch(setSelectFilter('пользователи')); }}
                                 title='добавить пользователя'
                             />
                         </div>

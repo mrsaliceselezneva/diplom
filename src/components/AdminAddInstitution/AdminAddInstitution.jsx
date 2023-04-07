@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
+
+import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
 import styles from './AdminAddInstitution.module.scss';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
@@ -15,53 +17,33 @@ function AdminAddInstitution() {
         <div className={styles.wrapper}>
             <div className={styles.wrapper__institution}>
                 <form>
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                название
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="Название"
-                            ref={nameRef}
-                            onChange={() => {
-                                dispatch(setInstitutionName(nameRef.current.value));
-                            }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="название"
+                        type="password"
+                        placeholder="Название"
+                        ref={nameRef}
+                        onChange={() => {
+                            dispatch(setInstitutionName(nameRef.current.value));
+                        }}
+                    />
 
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                email
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="email"
-                            ref={emailRef}
-                            onChange={() => {
-                                dispatch(setInstitutionEmail(emailRef.current.value));
-                            }}
-                        />
-                    </label>
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                адрес
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="адрес"
-                            ref={addressRef}
-                            onChange={() => { }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="email"
+                        type="text"
+                        placeholder="email"
+                        ref={emailRef}
+                        onChange={() => {
+                            dispatch(setInstitutionEmail(emailRef.current.value));
+                        }}
+                    />
+
+                    <InputTextBlock
+                        title="адрес"
+                        type="text"
+                        placeholder="Адрес"
+                        ref={addressRef}
+                    />
+
                     <label className={styles.wrapper__institution__label}>
                         <input
                             type="submit"

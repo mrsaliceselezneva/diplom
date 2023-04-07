@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
 import styles from './AdminAddInstitutionAdmin.module.scss';
 
 function AdminAddInstitutionAdmin() {
@@ -32,107 +33,64 @@ function AdminAddInstitutionAdmin() {
         <div className={styles.wrapper}>
             <div className={styles.wrapper__institution}>
                 <form>
-                    <div className={styles.wrapper__institution__label__top}>
-                        <div className={styles.wrapper__institution__label__top__title}>
-                            фамилия
-                        </div>
-                    </div>
-                    <input
+                    <InputTextBlock
+                        title="фамилия"
                         type="text"
-                        className={styles.wrapper__institution__label__input}
                         placeholder="Фамилия"
                         ref={lastnameRef}
                         onChange={() => {
                             lastnameRef.current.value = normalizeText(
                                 lastnameRef.current.value,
                             );
-                            // dispatch(setAdminLastname(lastnameRef.current.value));
                         }}
                     />
 
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                имя
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="Имя"
-                            ref={nameRef}
-                            onChange={() => {
-                                nameRef.current.value = normalizeText(nameRef.current.value);
-                                // dispatch(setAdminName(nameRef.current.value));
-                            }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="имя"
+                        type="text"
+                        placeholder="Имя"
+                        ref={nameRef}
+                        onChange={() => {
+                            nameRef.current.value = normalizeText(nameRef.current.value);
+                        }}
+                    />
 
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                отчество
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="Отчество"
-                            ref={patronymicRef}
-                            onChange={() => {
-                                patronymicRef.current.value = normalizeText(
-                                    patronymicRef.current.value,
-                                );
-                            }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="отчество"
+                        type="text"
+                        placeholder="Отчество"
+                        ref={patronymicRef}
+                        onChange={() => {
+                            patronymicRef.current.value = normalizeText(
+                                patronymicRef.current.value,
+                            );
+                        }}
+                    />
 
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                email
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="email"
-                            ref={emailRef}
-                            onChange={() => { }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="email"
+                        type="text"
+                        placeholder="email"
+                        ref={emailRef}
+                    />
 
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                телефон
-                            </div>
-                        </div>
-                        <input
-                            type="text"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="Телефон"
-                            ref={phoneRef}
-                            onChange={() => {
-                                phoneRef.current.value = normalizePhone();
-                            }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="телефон"
+                        type="text"
+                        placeholder="Телефон"
+                        ref={phoneRef}
+                        onChange={() => {
+                            phoneRef.current.value = normalizePhone();
+                        }}
+                    />
 
-                    <label className={styles.wrapper__institution__label}>
-                        <div className={styles.wrapper__institution__label__top}>
-                            <div className={styles.wrapper__institution__label__top__title}>
-                                пароль
-                            </div>
-                        </div>
-                        <input
-                            type="password"
-                            className={styles.wrapper__institution__label__input}
-                            placeholder="Пароль"
-                            ref={passwordRef}
-                            onChange={() => { }}
-                        />
-                    </label>
+                    <InputTextBlock
+                        title="пароль"
+                        type="password"
+                        placeholder="Пароль"
+                        ref={passwordRef}
+                    />
+
                     <label className={styles.wrapper__institution__label}>
                         <input
                             type="submit"
