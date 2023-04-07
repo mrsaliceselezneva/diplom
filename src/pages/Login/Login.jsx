@@ -3,8 +3,8 @@ import React, { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import { setRefreshToken } from '../../redux/slices/tokenSlice';
 import { Link } from 'react-router-dom';
+import { setRefreshToken, setAccessToken } from '../../redux/slices/tokenSlice';
 
 import styles from './Login.module.scss';
 
@@ -19,12 +19,11 @@ function Login() {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         };
-        console.log(data);
         axios
             .post(`${process.env.REACT_APP_API_URL}/token/`, data)
             .then((response) => {
-                console.log(response.data);
                 dispatch(setRefreshToken(response.data.refresh));
+                dispatch(setAccessToken(response.data.access));
             })
             .catch((error) => {
                 console.log(error);

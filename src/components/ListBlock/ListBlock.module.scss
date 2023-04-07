@@ -1,0 +1,75 @@
+@import url("http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic");
+
+@mixin text($w, $s, $l, $c) {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: $w;
+    font-size: $s;
+    line-height: $l;
+    color: $c;
+}
+
+@mixin listblock($c) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: auto;
+    grid-row-gap: auto;
+
+    background-color: $c;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: solid 2px rgba(0, 155, 118, 0.3);
+
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+
+    &__block {
+        display: flex;
+        @include text(600, 14px, 16px, #009b76);
+        border-right: thin solid #009b76;
+        padding: 2px;
+        align-items: center;
+    }
+
+    &__block:last-child {
+        border-right: 0;
+    }
+
+    &__del {
+        background-color: #ff6e4a;
+        color: #fefdfc;
+        width: 44px;
+        height: 44px;
+        padding: 6px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border: solid 2px rgba(0, 155, 118, 0.3);
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+
+    &__listblock0 {
+        @include listblock(#fdf4e3);
+    }
+
+    &__listblock0:hover {
+        background-color: rgba(49, 102, 80, 0.3);
+    }
+
+    &__listblock1 {
+        @include listblock(#f7e0b5);
+    }
+
+    &__listblock1:hover {
+        background-color: rgba(49, 102, 80, 0.3);
+    }
+}
