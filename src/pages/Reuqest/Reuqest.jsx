@@ -37,7 +37,6 @@ function Reuqest() {
             institutionEmail,
             institutionAddress,
         };
-        console.log(data);
         axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then(() => {
             dispatch(setClear);
         });

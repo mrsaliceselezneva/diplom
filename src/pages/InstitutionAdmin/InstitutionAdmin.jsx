@@ -10,10 +10,10 @@ import Sidebar from 'components/Sidebar/Sidebar';
 
 import { setSelectFilter } from 'redux/slices/sidebarSlice';
 import { useState } from 'react';
-import styles from './Admin.module.scss';
+import styles from './InstitutionAdmin.module.scss';
 
 
-function Admin() {
+function InstitutionAdmin() {
     const dispatch = useDispatch();
     const { selectFilter } = useSelector((state) => state.sidebarReducer);
 
@@ -26,25 +26,8 @@ function Admin() {
                     <div onClick={() => setActiveButton(false)}>
                         <Sidebar />
                     </div>
-                    {selectFilter === 'организации' ?
-                        <div onClick={() => setActiveButton(true)}>
-                            <AdminAddButton
-                                setSelectAdd={() => { dispatch(setSelectFilter('организации')); }}
-                                title='добавить организацию'
-                            />
-                        </div>
-                        :
-                        <div onClick={() => setActiveButton(true)}>
-                            <AdminAddButton
-                                setSelectAdd={() => { dispatch(setSelectFilter('пользователи')); }}
-                                title='добавить пользователя'
-                            />
-                        </div>
-                    }
                 </div>
                 <div className={styles.wrapper__admin__main}>
-                    {activeButton && selectFilter === 'организации' && <AdminAddInstitution />}
-                    {activeButton && selectFilter === 'пользователи' && <AdminAddInstitutionAdmin />}
                     {!activeButton && <AdminList />}
                 </div>
             </div>
@@ -52,4 +35,4 @@ function Admin() {
     );
 }
 
-export default Admin;
+export default InstitutionAdmin;
