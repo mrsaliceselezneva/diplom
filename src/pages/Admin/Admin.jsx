@@ -8,7 +8,7 @@ import AdminAddButton from 'components/AdminAddButton/AdminAddButton';
 
 import Sidebar from 'components/Sidebar/Sidebar';
 
-import { setSelectFilter, setLinkFilter } from 'redux/slices/sidebarSlice';
+import { setSelectFilter } from 'redux/slices/sidebarSlice';
 import { useState } from 'react';
 import styles from './Admin.module.scss';
 

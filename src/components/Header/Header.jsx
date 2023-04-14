@@ -8,6 +8,7 @@ import { setLogout } from '../../redux/slices/tokenSlice';
 
 import styles from './Header.module.scss';
 
+
 const institutionInfo = [
     'Код Успеха',
     'ул. Федерации, 148',
@@ -20,7 +21,7 @@ const personalInfo = [
     'Алексеевич',
     'poluvesov.artyom@gmail.com',
     '89278070727',
-];
+]
 
 function Header() {
     const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function Header() {
                     <div className={styles.wrapper__header__logo__img_background}>
                         <img
                             className={styles.wrapper__header__logo__img_background__img}
-                            src="img/logo.png"
+                            src={`${process.env.REACT_APP_URL}/img/logo.png`}
                             alt="logo"
                         />
                     </div>

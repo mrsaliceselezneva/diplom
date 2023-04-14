@@ -1,8 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import requestReducer from './slices/requestSlice';
-import tokenReducer from './slices/tokenSlice';
-import sidebarReducer from './slices/sidebarSlice';
-
 import storage from 'redux-persist/lib/storage';
 import {
     persistStore,
@@ -14,6 +10,11 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
+
+import requestReducer from './slices/requestSlice';
+import tokenReducer from './slices/tokenSlice';
+import sidebarReducer from './slices/sidebarSlice';
+
 
 const persistConfig = {
     key: 'root',

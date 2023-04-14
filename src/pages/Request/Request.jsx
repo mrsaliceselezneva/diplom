@@ -2,14 +2,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 
-import ReuqestAdmin from 'components/ReuqestAdmin/ReuqestAdmin';
-import ReuqestInstitution from 'components/ReuqestInstitution/ReuqestInstitution';
-import styles from './Reuqest.module.scss';
+import RequestAdmin from 'components/RequestAdmin/RequestAdmin';
+import RequestInstitution from 'components/RequestInstitution/RequestInstitution';
+import styles from './styles.module.scss';
 
 
 import { setClear } from '../../redux/slices/requestSlice';
 
-function Reuqest() {
+function Request() {
     const dispatch = useDispatch();
     const {
         adminName,
@@ -37,7 +37,6 @@ function Reuqest() {
             institutionEmail,
             institutionAddress,
         };
-        console.log(data);
         axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then(() => {
             dispatch(setClear);
         });
@@ -69,8 +68,8 @@ function Reuqest() {
                     </div>
                 </div>
                 <div className={styles.wrapper__form__main}>
-                    {!active ? <ReuqestInstitution /> : null}
-                    {active ? <ReuqestAdmin /> : null}
+                    {!active ? <RequestInstitution /> : null}
+                    {active ? <RequestAdmin /> : null}
                 </div>
                 <label className={styles.wrapper__form__label}>
                     <input
@@ -85,4 +84,4 @@ function Reuqest() {
     );
 }
 
-export default Reuqest;
+export default Request;

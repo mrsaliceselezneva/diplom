@@ -1,7 +1,7 @@
-@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+@import url("http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic");
 
 @mixin text($w, $s, $l, $c) {
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -9,10 +9,10 @@
     color: $c;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap");
 
 @mixin textLatin($w, $s, $l, $c) {
-    font-family: 'MuseoModerno';
+    font-family: "MuseoModerno";
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -52,10 +52,12 @@ $header-height: 80px;
     top: 70px;
     opacity: 0;
     transition: 2s;
+    z-index: -10;
 }
 
 @mixin red_hover {
     animation: anim_show 1s linear forwards;
+    z-index: 10;
 }
 
 .wrapper {
