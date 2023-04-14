@@ -19,7 +19,9 @@ const dict = {
     'is_superuser': 'суперпользователь',
 
     'name': 'название',
-    'address': 'адрес'
+    'address': 'адрес',
+
+    'type': 'тип'
 }
 
 function AdminList() {
@@ -41,6 +43,8 @@ function AdminList() {
                 setKeys(mas);
             })
             .catch((error) => {
+                setList([]);
+                setKeys([]);
                 console.log(error);
             });
     }, [linkFilter]);

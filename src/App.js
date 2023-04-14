@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import Admin from './pages/Admin/Admin';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
-import Reuqest from './pages/Reuqest/Reuqest';
+import Reuqest from './pages/Reuqest';
 
 function App() {
     return (

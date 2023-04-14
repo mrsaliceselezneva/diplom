@@ -11,6 +11,7 @@ function Sidebar() {
 
     useEffect(() => {
         if (window.location.href === `${process.env.REACT_APP_URL}/admin`) {
+
             setFilters([
                 { name: 'организации', link: 'institution' },
                 { name: 'пользователи', link: 'users' }
@@ -19,9 +20,10 @@ function Sidebar() {
         if (window.location.href === `${process.env.REACT_APP_URL}/institution/admin`) {
             setFilters([
                 { name: 'учителя', link: 'teachers?institution=2' },
-                { name: 'кабинеты', link: '' },
-                { name: 'звонки', link: '' },
-                { name: 'ученики', link: '' }
+                { name: 'кабинеты', link: 'classroom?institution=2' },
+                { name: 'звонки', link: 'call?institution=2' },
+                { name: 'ученики', link: 'student?institution=2' },
+                { name: 'группы', link: 'group?institution=2' },
             ]);
         }
     }, [window.location.href]);
