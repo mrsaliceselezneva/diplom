@@ -6,7 +6,7 @@ import { YMaps } from '@pbe/react-yandex-maps';
 import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
-import styles from './ReuqestInstitution.module.scss';
+import styles from './RequestInstitution.module.scss';
 
 import MapBlock from '../MapBlock/MapBlock';
 
