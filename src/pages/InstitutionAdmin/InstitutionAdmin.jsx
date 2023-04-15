@@ -1,20 +1,17 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import AdminAddInstitution from 'components/AdminAddInstitution/AdminAddInstitution';
-import AdminAddInstitutionAdmin from 'components/AdminAddInstitutionAdmin/AdminAddInstitutionAdmin';
+import AddTeacher from 'components/AddTeacher/AddTeacher';
 
 import AdminList from 'components/AdminList/AdminList';
 import AdminAddButton from 'components/AdminAddButton/AdminAddButton';
 
 import Sidebar from 'components/Sidebar/Sidebar';
 
-import { setSelectFilter } from 'redux/slices/sidebarSlice';
 import { useState } from 'react';
 import styles from './InstitutionAdmin.module.scss';
 
 
 function InstitutionAdmin() {
-    const dispatch = useDispatch();
     const { selectFilter } = useSelector((state) => state.sidebarReducer);
 
     const [activeButton, setActiveButton] = useState(false);
@@ -60,6 +57,15 @@ function InstitutionAdmin() {
                     />
                 </div>
             )
+        return null;
+    }
+
+    function selectAdd() {
+        if (selectFilter === 'учителя')
+            return (
+                <AddTeacher />
+            );
+        return null;
     }
 
     return (
@@ -72,6 +78,7 @@ function InstitutionAdmin() {
                     {selectButton()}
                 </div>
                 <div className={styles.wrapper__admin__main}>
+                    {activeButton && selectAdd()}
                     {!activeButton && <AdminList />}
                 </div>
             </div>

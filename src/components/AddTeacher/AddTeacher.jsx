@@ -3,28 +3,43 @@ import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
-import styles from './AdminAddInstitution.module.scss';
+import styles from './AddTeacher.module.scss';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
-function AdminAddInstitution() {
+function Add() {
     const dispatch = useDispatch();
 
-    const nameRef = useRef(null);
     const emailRef = useRef(null);
-    const addressRef = useRef(null);
+    const firstNameRef = useRef(null);
+    const lastNameRef = useRef(null);
+    const institutionIdRef = useRef(null);
+    const patronymicRef = useRef(null);
+    const adminRef = useRef(null);
+    const teacherRef = useRef(null);
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__institution}>
                 <form>
                     <InputTextBlock
-                        title="название"
+                        title="фамилия"
                         type="text"
-                        placeholder="Название"
-                        ref={nameRef}
-                        onChange={() => {
-                            dispatch(setInstitutionName(nameRef.current.value));
-                        }}
+                        placeholder="Фамилия"
+                        ref={lastNameRef}
+                    />
+
+                    <InputTextBlock
+                        title="имя"
+                        type="text"
+                        placeholder="Имя"
+                        ref={firstNameRef}
+                    />
+
+                    <InputTextBlock
+                        title="отчество"
+                        type="text"
+                        placeholder="Отчество"
+                        ref={patronymicRef}
                     />
 
                     <InputTextBlock
@@ -32,17 +47,8 @@ function AdminAddInstitution() {
                         type="text"
                         placeholder="email"
                         ref={emailRef}
-                        onChange={() => {
-                            dispatch(setInstitutionEmail(emailRef.current.value));
-                        }}
                     />
 
-                    <InputTextBlock
-                        title="адрес"
-                        type="text"
-                        placeholder="Адрес"
-                        ref={addressRef}
-                    />
 
                     <label className={styles.wrapper__institution__label}>
                         <input
@@ -57,4 +63,4 @@ function AdminAddInstitution() {
     );
 }
 
-export default AdminAddInstitution;
+export default Add;
