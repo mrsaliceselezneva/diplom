@@ -1,5 +1,5 @@
 import AdminAddInstitution from 'components/AdminAddInstitution/AdminAddInstitution';
-import AdminAddInstitutionAdmin from 'components/AdminAddInstitutionAdmin/AdminAddInstitutionAdmin';
+import AdminAddInstitutionAdmin from 'components/AdminAddInstitutionAdmin';
 
 import AdminList from 'components/AdminList/AdminList';
 import AdminAddButton from 'components/AdminAddButton/AdminAddButton';

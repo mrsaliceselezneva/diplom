@@ -1,8 +1,8 @@
 import View from './View';
 
 function Controller({dispatch, selectFilter, setSelectFilter, activeButton, setActiveButton}) {
-    const updateSelectFilter = (newValue) => {
-        dispatch(setSelectFilter(newValue));
+    const updateSelectFilter = (value) => {
+        dispatch(setSelectFilter(value));
     }
 
     return (

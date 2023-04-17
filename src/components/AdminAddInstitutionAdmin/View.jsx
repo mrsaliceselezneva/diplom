@@ -1,33 +1,11 @@
-import { useRef } from 'react';
 import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
-import styles from './AdminAddInstitutionAdmin.module.scss';
 
-function AdminAddInstitutionAdmin() {
-    const nameRef = useRef(null);
-    const lastnameRef = useRef(null);
-    const patronymicRef = useRef(null);
-    const phoneRef = useRef(null);
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
+import { forwardRef } from 'react';
 
-    function normalizeText(value) {
-        if (!value) return '';
-        const val = value.replace(/[^а-яёА-ЯЁ]/u, '');
-        if (val.length > 0) return val[0].toUpperCase() + val.slice(1).toLowerCase();
-        return '';
-    }
+import styles from './styles.module.scss';
 
-    function normalizePhone() {
-        if (!phoneRef.current.value) return '';
-        let val;
-        if (phoneRef.current.value.length === 1) val = phoneRef.current.value.replace(/[^\d]/g, '');
-        else val = phoneRef.current.value.replace(/[^\d]/g, '').slice(1);
-        if (val.length < 4) {
-            return `+7 (${val}`;
-        }
-        if (val.length < 7) return `+7 (${val.slice(0, 3)}) ${val.slice(3)}`;
-        return `+7 (${val.slice(0, 3)}) ${val.slice(3, 6)}-${val.slice(6, 10)}`;
-    }
+const View = forwardRef((props, ref) => {
+    const { normalizeText, normalizePhone } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -37,10 +15,10 @@ function AdminAddInstitutionAdmin() {
                         title="фамилия"
                         type="text"
                         placeholder="Фамилия"
-                        ref={lastnameRef}
+                        ref={ref.lastnameRef}
                         onChange={() => {
-                            lastnameRef.current.value = normalizeText(
-                                lastnameRef.current.value,
+                            ref.lastnameRef.current.value = normalizeText(
+                                ref.lastnameRef.current.value,
                             );
                         }}
                     />
@@ -49,9 +27,9 @@ function AdminAddInstitutionAdmin() {
                         title="имя"
                         type="text"
                         placeholder="Имя"
-                        ref={nameRef}
+                        ref={ref.nameRef}
                         onChange={() => {
-                            nameRef.current.value = normalizeText(nameRef.current.value);
+                            ref.nameRef.current.value = normalizeText(ref.nameRef.current.value);
                         }}
                     />
 
@@ -59,10 +37,10 @@ function AdminAddInstitutionAdmin() {
                         title="отчество"
                         type="text"
                         placeholder="Отчество"
-                        ref={patronymicRef}
+                        ref={ref.patronymicRef}
                         onChange={() => {
-                            patronymicRef.current.value = normalizeText(
-                                patronymicRef.current.value,
+                            ref.patronymicRef.current.value = normalizeText(
+                                ref.patronymicRef.current.value,
                             );
                         }}
                     />
@@ -71,16 +49,16 @@ function AdminAddInstitutionAdmin() {
                         title="email"
                         type="text"
                         placeholder="email"
-                        ref={emailRef}
+                        ref={ref.emailRef}
                     />
 
                     <InputTextBlock
                         title="телефон"
                         type="text"
                         placeholder="Телефон"
-                        ref={phoneRef}
+                        ref={ref.phoneRef}
                         onChange={() => {
-                            phoneRef.current.value = normalizePhone();
+                            ref.phoneRef.current.value = normalizePhone(ref.phoneRef.current.value);
                         }}
                     />
 
@@ -88,7 +66,7 @@ function AdminAddInstitutionAdmin() {
                         title="пароль"
                         type="password"
                         placeholder="Пароль"
-                        ref={passwordRef}
+                        ref={ref.passwordRef}
                     />
 
                     <label className={styles.wrapper__institution__label}>
@@ -102,6 +80,6 @@ function AdminAddInstitutionAdmin() {
             </div>
         </div>
     );
-}
+})
 
-export default AdminAddInstitutionAdmin;
+export default View;
