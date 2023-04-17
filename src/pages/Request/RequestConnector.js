@@ -1,22 +1,42 @@
-import ReuqestView from './RequestView';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-function RequestConnector({data, active, setActive, setClear, ReuqestAdmin, ReuqestInstitution, styles, axios}) {
-    function send() {
-        axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then(() => {
-            // eslint-disable-next-line no-unused-expressions
-            setClear;
-        });
-    }
+import RequestController from './RequestController';
+
+
+function RequestConnector() {
+    const {
+        adminName,
+        adminLastname,
+        adminPatronymic,
+        adminEmail,
+        adminPhone,
+        adminPassword,
+        institutionName,
+        institutionEmail,
+        institutionAddress,
+    } = useSelector((state) => state.requestReducer);
+
+    const [active, setActive] = useState(false);
+
+    const data = {
+        adminName,
+        adminLastname,
+        adminPatronymic,
+        adminEmail,
+        adminPhone,
+        adminPassword,
+        institutionName,
+        institutionEmail,
+        institutionAddress,
+    };
 
     return (
-        <ReuqestView 
+        <RequestController 
             active={active}
             setActive={setActive}
-            ReuqestAdmin={ReuqestAdmin}
-            ReuqestInstitution={ReuqestInstitution}
-            requestComp={(!active && ReuqestInstitution) || (active && ReuqestAdmin)}
-            styles={styles}
-            send={() => send()}
+            data={data}
+
         />
     );
 }

@@ -1,4 +1,10 @@
-function RequestView({ active, setActive, requestComp, styles, send }) {
+import RequestAdmin from 'components/RequestAdmin/RequestAdmin';
+import RequestInstitution from 'components/RequestInstitution/RequestInstitution';
+import styles from './styles.module.scss';
+
+
+function Request({ active, setActive, send }) {
+
 
     return (
         <div className={styles.wrapper}>
@@ -26,7 +32,9 @@ function RequestView({ active, setActive, requestComp, styles, send }) {
                     </div>
                 </div>
                 <div className={styles.wrapper__form__main}>
-                    {requestComp}
+                    {!active ? <RequestInstitution /> : null}
+                    {active ? <RequestAdmin /> : null}
+
                 </div>
                 <label className={styles.wrapper__form__label}>
                     <input
@@ -41,4 +49,4 @@ function RequestView({ active, setActive, requestComp, styles, send }) {
     );
 }
 
-export default RequestView;
+export default Request;
