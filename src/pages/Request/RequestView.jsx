@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 
 function Request({ active, setActive, send }) {
 
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__title}>Заявка на создание организации</div>
@@ -33,6 +34,7 @@ function Request({ active, setActive, send }) {
                 <div className={styles.wrapper__form__main}>
                     {!active ? <RequestInstitution /> : null}
                     {active ? <RequestAdmin /> : null}
+
                 </div>
                 <label className={styles.wrapper__form__label}>
                     <input
