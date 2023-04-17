@@ -3,7 +3,7 @@ import RequestInstitution from 'components/RequestInstitution/RequestInstitution
 import styles from './styles.module.scss';
 
 
-function Request({ active, setActive, send }) {
+function View({ active, setActive, send }) {
 
 
     return (
@@ -49,4 +49,4 @@ function Request({ active, setActive, send }) {
     );
 }
 
-export default Request;
+export default View;

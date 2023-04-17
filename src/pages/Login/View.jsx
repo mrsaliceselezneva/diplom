@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 
 import styles from './styles.module.scss';
 
-const LoginView = forwardRef((props, ref) => {
+const View = forwardRef((props, ref) => {
     const { login } = props;
 
     return (
@@ -58,4 +58,4 @@ const LoginView = forwardRef((props, ref) => {
     );
 })
 
-export default LoginView;
+export default View;

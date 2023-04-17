@@ -1,4 +1,4 @@
-import LoginController from './LoginController';
+import LoginController from './Controller';
 
 function LoginConnector() {
 

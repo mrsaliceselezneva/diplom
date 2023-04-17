@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 
 import { setRefreshToken, setAccessToken } from '../../redux/slices/tokenSlice';
 
-import LoginView from './LoginView';
+import View from './View';
 
-function LoginController() {
+function Controller() {
     const dispatch = useDispatch();
 
     const emailRef = useRef(null);
@@ -32,11 +32,11 @@ function LoginController() {
     }
 
     return (
-        <LoginView 
+        <View 
             login={() => login()}
             ref={ref}
         />
     );   
 }
 
-export default LoginController;
+export default Controller;

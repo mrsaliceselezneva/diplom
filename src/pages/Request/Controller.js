@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 
-import RequestView from './RequestView';
+import View from './View';
 
 import { setClear } from '../../redux/slices/requestSlice';
 
-function Request({active, setActive, data}) {
+function Controller({active, setActive, data}) {
     const dispatch = useDispatch();
 
     function send() {
@@ -15,7 +15,7 @@ function Request({active, setActive, data}) {
     }
 
     return (
-        <RequestView 
+        <View 
             send={() => send()}
             active={active}
             setActive={setActive}
@@ -24,4 +24,4 @@ function Request({active, setActive, data}) {
     );
 }
 
-export default Request;
+export default Controller;

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import RequestController from './RequestController';
+import Controller from './Controller';
 
 
-function RequestConnector() {
+function Connector() {
     const {
         adminName,
         adminLastname,
@@ -32,7 +32,7 @@ function RequestConnector() {
     };
 
     return (
-        <RequestController 
+        <Controller 
             active={active}
             setActive={setActive}
             data={data}
@@ -41,4 +41,4 @@ function RequestConnector() {
     );
 }
 
-export default RequestConnector;
+export default Connector;

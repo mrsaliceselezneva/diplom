@@ -1,7 +1,7 @@
 import styles from './styles.module.scss';
 
-function MainView() {
+function View() {
     return <div className={styles.wrapper}>вы не авторизовались</div>;
 }
 
-export default MainView;
+export default View;
