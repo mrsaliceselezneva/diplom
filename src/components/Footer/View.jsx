@@ -1,9 +1,9 @@
 import { SlSocialVkontakte } from 'react-icons/sl';
 import { FaTelegramPlane } from 'react-icons/fa';
 
-import styles from './Footer.module.scss';
+import styles from './styles.module.scss';
 
-function Footer() {
+function View() {
     return (
         <div className={styles.footer}>
             <div className={styles.footer__info}>
@@ -37,4 +37,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default View;

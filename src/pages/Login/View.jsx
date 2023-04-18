@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import { forwardRef } from 'react';
 
 import styles from './styles.module.scss';

@@ -1,4 +1,4 @@
-import AdminList from 'components/AdminList/AdminList';
+import AdminList from 'components/AdminList';
 import Sidebar from 'components/Sidebar/Sidebar';
 import AddTeacher from 'components/AddTeacher';
 

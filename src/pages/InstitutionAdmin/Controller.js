@@ -1,4 +1,4 @@
-import AdminAddButton from 'components/AdminAddButton/AdminAddButton';
+import AdminAddButton from 'components/AdminAddButton';
 
 import View from './View';
 

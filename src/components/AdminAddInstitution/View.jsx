@@ -1,17 +1,9 @@
-import { useRef } from 'react';
-
-import { useDispatch } from 'react-redux';
-
 import InputTextBlock from 'components/InputBlock';
-import styles from './AdminAddInstitution.module.scss';
-import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
+import { forwardRef } from 'react';
+import styles from './styles.module.scss';
 
-function AdminAddInstitution() {
-    const dispatch = useDispatch();
-
-    const nameRef = useRef(null);
-    const emailRef = useRef(null);
-    const addressRef = useRef(null);
+const View = forwardRef((props, ref) => {
+    const { dispatch, setInstitutionName, setInstitutionEmail } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -21,9 +13,9 @@ function AdminAddInstitution() {
                         title="название"
                         type="password"
                         placeholder="Название"
-                        ref={nameRef}
+                        ref={ref.nameRef}
                         onChange={() => {
-                            dispatch(setInstitutionName(nameRef.current.value));
+                            dispatch(setInstitutionName(ref.nameRef.current.value));
                         }}
                     />
 
@@ -31,9 +23,9 @@ function AdminAddInstitution() {
                         title="email"
                         type="text"
                         placeholder="email"
-                        ref={emailRef}
+                        ref={ref.emailRef}
                         onChange={() => {
-                            dispatch(setInstitutionEmail(emailRef.current.value));
+                            dispatch(setInstitutionEmail(ref.emailRef.current.value));
                         }}
                     />
 
@@ -41,7 +33,7 @@ function AdminAddInstitution() {
                         title="адрес"
                         type="text"
                         placeholder="Адрес"
-                        ref={addressRef}
+                        ref={ref.addressRef}
                     />
 
                     <label className={styles.wrapper__institution__label}>
@@ -55,6 +47,6 @@ function AdminAddInstitution() {
             </div>
         </div>
     );
-}
+})
 
-export default AdminAddInstitution;
+export default View;

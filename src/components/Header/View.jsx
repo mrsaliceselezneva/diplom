@@ -1,31 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn, FiLogOut, FiUser } from 'react-icons/fi';
 import { BsBuildingFillAdd, BsBuildingFill } from 'react-icons/bs';
-import { useSelector, useDispatch } from 'react-redux';
 
-import { setLogout } from '../../redux/slices/tokenSlice';
-
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 
 
-const institutionInfo = [
-    'Код Успеха',
-    'ул. Федерации, 148',
-    'poluvesov.artyom@gmail.com',
-    '89278070727',
-];
-const personalInfo = [
-    'Полувесов',
-    'Артём',
-    'Алексеевич',
-    'poluvesov.artyom@gmail.com',
-    '89278070727',
-]
-
-function Header() {
-    const dispatch = useDispatch();
-    const { refreshToken } = useSelector((state) => state.tokenReducer);
+function View({ dispatch, setLogout, refreshToken, institutionInfo, personalInfo }) {
 
     return (
         <div className={styles.wrapper}>
@@ -81,4 +61,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default View;

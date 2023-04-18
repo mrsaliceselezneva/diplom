@@ -1,8 +1,8 @@
-import AdminAddInstitution from 'components/AdminAddInstitution/AdminAddInstitution';
+import AdminAddInstitution from 'components/AdminAddInstitution';
 import AdminAddInstitutionAdmin from 'components/AdminAddInstitutionAdmin';
 
-import AdminList from 'components/AdminList/AdminList';
-import AdminAddButton from 'components/AdminAddButton/AdminAddButton';
+import AdminList from 'components/AdminList';
+import AdminAddButton from 'components/AdminAddButton';
 
 import Sidebar from 'components/Sidebar/Sidebar';
 

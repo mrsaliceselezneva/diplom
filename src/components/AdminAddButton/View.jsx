@@ -1,6 +1,6 @@
-import styles from './AdminAddButton.module.scss';
+import styles from './styles.module.scss';
 
-function AdminAddButton({ setSelectAdd, title }) {
+function View({ setSelectAdd, title }) {
 
     return (
         <div className={styles.wrapper}>
@@ -11,4 +11,4 @@ function AdminAddButton({ setSelectAdd, title }) {
     );
 }
 
-export default AdminAddButton;
+export default View;

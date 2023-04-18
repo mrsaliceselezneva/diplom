@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
 import InstitutionAdmin from 'pages/InstitutionAdmin';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Request from './pages/Request';
