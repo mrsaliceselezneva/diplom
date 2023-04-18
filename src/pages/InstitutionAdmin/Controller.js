@@ -53,6 +53,7 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
             activeButton={activeButton}
             setActiveButton={setActiveButton}
             selectButton={selectButton()}
+            selectFilter={selectFilter}
         />
     );
 }

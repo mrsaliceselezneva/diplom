@@ -21,7 +21,8 @@ const dict = {
     'name': 'название',
     'address': 'адрес',
 
-    'type': 'тип'
+    'type': 'тип',
+    'multitasking': 'дистант'
 }
 
 function AdminList() {

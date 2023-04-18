@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
+import InputTextBlock from 'components/InputBlock';
 import styles from './AdminAddInstitution.module.scss';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 

@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
 import { YMaps } from '@pbe/react-yandex-maps';
-import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
+import InputTextBlock from 'components/InputBlock';
 import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
 import styles from './RequestInstitution.module.scss';

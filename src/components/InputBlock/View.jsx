@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
-import styles from './InputTextBlock.module.scss';
+import styles from './styles.module.scss';
 
-const InputTextBlock = forwardRef((props, ref) => {
+const View = forwardRef((props, ref) => {
     const { title, type, placeholder, onChange } = props;
     return (
         <label className={styles.label}>
@@ -20,4 +20,4 @@ const InputTextBlock = forwardRef((props, ref) => {
         </label>);
 })
 
-export default InputTextBlock;
+export default View;
