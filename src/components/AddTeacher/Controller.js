@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import axios from 'axios';
+import sendRequest from 'api/utils';
 import View from './View';
 
 function Controller() {
@@ -11,7 +11,7 @@ function Controller() {
     const passwordRef = useRef(null);
     const teacherRef = useRef(false);
     const adminRef = useRef(false);
-
+    
     const ref = {
         nameRef,
         lastnameRef,
@@ -55,10 +55,8 @@ function Controller() {
             phone: phoneRef.current.value,
             password: passwordRef.current.value
         };
-        
-        axios.post(`${process.env.REACT_APP_API_URL}/auth/users/`, data)
-        .then(() => {
-        });
+          
+        sendRequest('/auth/users/', 'post', data);
     }
 
     return (
