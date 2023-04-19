@@ -8,11 +8,11 @@ function View({ filters, dispatch, setSelectFilter, setLinkFilter, selectFilter 
             {filters.map((filter) => (
                 <SidebarBlock
                     key={filter.name}
-                    changeSelectGameType={() => {
+                    changeSelectBlockType={() => {
                         dispatch(setSelectFilter(filter.name));
                         dispatch(setLinkFilter(filter.link));
                     }}
-                    gameType={filter.name}
+                    blockType={filter.name}
                     select={selectFilter === filter.name}
                 />
             ))}
