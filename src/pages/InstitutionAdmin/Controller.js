@@ -5,6 +5,7 @@ import View from './View';
 
 function Controller({activeButton, setActiveButton, selectFilter}) {
 
+
     function selectButton() {
         if (selectFilter === 'учителя')
             return (
@@ -46,6 +47,7 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
                     />
                 </div>
             )
+        return null;
     }
 
     return (
