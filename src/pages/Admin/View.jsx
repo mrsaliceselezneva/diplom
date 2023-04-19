@@ -4,7 +4,7 @@ import AdminAddInstitutionAdmin from 'components/AdminAddInstitutionAdmin';
 import AdminList from 'components/AdminList';
 import AdminAddButton from 'components/AdminAddButton';
 
-import Sidebar from 'components/Sidebar/Sidebar';
+import Sidebar from 'components/Sidebar';
 
 import styles from './styles.module.scss';
 

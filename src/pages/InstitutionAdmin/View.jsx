@@ -1,5 +1,5 @@
 import AdminList from 'components/AdminList';
-import Sidebar from 'components/Sidebar/Sidebar';
+import Sidebar from 'components/Sidebar';
 import AddTeacher from 'components/AddTeacher';
 
 import AddClassroom from 'components/AddClassroom';
