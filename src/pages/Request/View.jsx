@@ -1,5 +1,5 @@
-import RequestAdmin from 'components/RequestAdmin/RequestAdmin';
-import RequestInstitution from 'components/RequestInstitution/RequestInstitution';
+import RequestAdmin from 'components/RequestAdmin';
+import RequestInstitution from 'components/RequestInstitution';
 import styles from './styles.module.scss';
 
 
