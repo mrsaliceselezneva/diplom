@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import React, { useRef } from 'react';
-import InputTextBlock from 'components/InputTextBlock/InputTextBlock';
+import InputTextBlock from 'components/InputBlock';
 
 
 import {
