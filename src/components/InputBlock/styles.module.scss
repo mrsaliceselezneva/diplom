@@ -77,3 +77,8 @@
         @include text(600, 18px, 18px, white);
     }
 }
+
+input[type='time']::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
+}

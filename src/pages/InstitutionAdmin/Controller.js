@@ -1,5 +1,8 @@
 import AdminAddButton from 'components/AdminAddButton';
-
+import AddTeacher from 'components/AddTeacher';
+import AddClassroom from 'components/AddClassroom';
+import AddCall from 'components/AddCall';
+import AddGroup from 'components/AddGroup';
 import View from './View';
 
 
@@ -50,12 +53,27 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
         return null;
     }
 
+    function whichAdd(){
+        if (activeButton){
+            if (selectFilter === 'учителя')
+                return <AddTeacher />;
+            if (selectFilter === 'кабинеты')
+                return <AddClassroom />;
+            if (selectFilter === 'звонки')
+                return <AddCall />;
+                if (selectFilter === 'группы')
+                return <AddGroup />;
+        }
+        return null;
+    }
+
     return (
         <View 
             activeButton={activeButton}
             setActiveButton={setActiveButton}
             selectButton={selectButton()}
             selectFilter={selectFilter}
+            whichAdd={whichAdd()}
         />
     );
 }

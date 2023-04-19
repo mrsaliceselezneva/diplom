@@ -1,12 +1,9 @@
 import AdminList from 'components/AdminList';
 import Sidebar from 'components/Sidebar/Sidebar';
-import AddTeacher from 'components/AddTeacher';
-
-import AddClassroom from 'components/AddClassroom';
 import styles from './styles.module.scss';
 
 
-function View({ selectButton, activeButton, setActiveButton, selectFilter }) {
+function View({ selectButton, activeButton, setActiveButton, whichAdd }) {
 
     return (
         <div className={styles.wrapper}>
@@ -18,8 +15,7 @@ function View({ selectButton, activeButton, setActiveButton, selectFilter }) {
                     {selectButton}
                 </div>
                 <div className={styles.wrapper__admin__main}>
-                    {activeButton && selectFilter === 'учителя' && <AddTeacher />}
-                    {activeButton && selectFilter === 'кабинеты' && <AddClassroom />}
+                    {whichAdd}
                     {!activeButton && <AdminList />}
                 </div>
             </div>
