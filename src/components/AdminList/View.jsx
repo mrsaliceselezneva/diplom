@@ -1,4 +1,4 @@
-import ListBlock from 'components/ListBlock/ListBlock';
+import ListBlock from 'components/ListBlock';
 import styles from './styles.module.scss';
 
 function View({ keys, dict, list }) {

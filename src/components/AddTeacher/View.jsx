@@ -53,14 +53,14 @@ const View = forwardRef((props, ref) => {
                         ref={ref.emailRef}
                     />
 
-                    <CheckboxBlock
+                    {/* <CheckboxBlock
                         title="учитель"
                         type="checkbox"
                         ref={ref.teacherRef}
                         onChange={() => {
                             console.log(ref.teacherRef.current.checked)
                         }}
-                    />
+                    /> */}
 
                     <CheckboxBlock
                         title="администратор"

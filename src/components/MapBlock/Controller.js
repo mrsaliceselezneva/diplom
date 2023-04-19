@@ -5,10 +5,11 @@ import React, { useRef, useEffect } from 'react';
 import { useYMaps } from '@pbe/react-yandex-maps';
 
 import { useDispatch } from 'react-redux';
-import styles from './MapBlock.module.scss';
 import { setInstitutionAddress } from '../../redux/slices/requestSlice';
 
-function MapBlock() {
+import View from './View';
+
+function Controller() {
     const dispatch = useDispatch();
 
     const mapRef = useRef(null);
@@ -87,7 +88,7 @@ function MapBlock() {
         });
     }, [ymaps, mapRef]);
 
-    return <div ref={mapRef} className={styles.map} />;
+    return <View ref={mapRef} />;
 }
 
-export default MapBlock;
+export default Controller;

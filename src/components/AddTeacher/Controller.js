@@ -49,7 +49,7 @@ function Controller() {
             first_name: nameRef.current.value,
             last_name: lastnameRef.current.value,
             patronymic: patronymicRef.current.value,
-            institution_id: '1',
+            institution_id: '2',
             is_teacher: teacherRef.current.checked,
             is_admin: adminRef.current.checked,
             phone: phoneRef.current.value,

@@ -8,7 +8,7 @@ import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requ
 
 import styles from './RequestInstitution.module.scss';
 
-import MapBlock from '../MapBlock/MapBlock';
+import MapBlock from '../MapBlock';
 
 function ReuqestInstitution() {
     const dispatch = useDispatch();
