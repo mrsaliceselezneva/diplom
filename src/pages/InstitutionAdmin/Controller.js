@@ -3,6 +3,7 @@ import AddTeacher from 'components/AddTeacher';
 import AddClassroom from 'components/AddClassroom';
 import AddCall from 'components/AddCall';
 import AddGroup from 'components/AddGroup';
+import AddStudent from 'components/AddStudent';
 import View from './View';
 
 
@@ -61,8 +62,10 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
                 return <AddClassroom />;
             if (selectFilter === 'звонки')
                 return <AddCall />;
-                if (selectFilter === 'группы')
+            if (selectFilter === 'группы')
                 return <AddGroup />;
+            if (selectFilter === 'ученики')
+                return <AddStudent />;
         }
         return null;
     }

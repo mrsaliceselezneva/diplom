@@ -1,0 +1,84 @@
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+
+@mixin text($w, $s, $l, $c) {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: $w;
+    font-size: $s;
+    line-height: $l;
+    color: $c;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    @include text(600, 18px, 18px, #009b76);
+    margin-bottom: 10px;
+
+    &__top {
+        width: 100%;
+        height: 26px;
+
+        &__title {
+            display: flex;
+            justify-content: center;
+            margin-left: 0;
+            margin-right: auto;
+            width: 200px;
+            height: 100%;
+            color: white;
+            background-color: #009b76;
+            border-top-left-radius: 8px;
+            border: 1px solid;
+            border-bottom-color: rgba(253, 244, 227, 1);
+            border-top-right-radius: 8px;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+    }
+
+    &__input {
+        width: 400px;
+        height: 32px;
+        border: 2px solid;
+        border-color: #009b76;
+        border-radius: 8px;
+        border-top-left-radius: 0;
+        background: white;
+        @include text(600, 18px, 18px, #009b76);
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &__input:focus {
+        outline: none !important;
+    }
+
+    &__submit {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: 140px;
+        height: 30px;
+        border: none;
+        border-radius: 8px;
+        background-color: #ff6e4a;
+        @include text(600, 18px, 18px, white);
+    }
+
+    &__submit:focus {
+        outline: none !important;
+        box-shadow: -3px 3px 5px rgba(122, 122, 122, 0.5);
+    }
+
+    &__submit:hover {
+        background: rgba(0, 155, 118, 0.4);
+        @include text(600, 18px, 18px, white);
+    }
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
+}
