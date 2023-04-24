@@ -17,7 +17,10 @@ const dict = {
     'address': 'адрес',
 
     'type': 'тип',
-    'multitasking': 'дистант'
+    'multitasking': 'дистант',
+
+    'time_start': 'начало',
+    'pause': 'длится'
 }
 
 function Connector() {

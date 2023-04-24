@@ -11,7 +11,7 @@ const View = forwardRef((props, ref) => {
                 <form>
                     <InputTextBlock
                         title="название"
-                        type="password"
+                        type="text"
                         placeholder="Название"
                         ref={ref.nameRef}
                         onChange={() => {

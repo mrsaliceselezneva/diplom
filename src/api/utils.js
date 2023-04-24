@@ -5,9 +5,9 @@ const instance = axios.create({
 });
 
 const sendRequest = (url, method, data) => (
-    instance.request(
-        {url, method, data}
-    ).then((responce) => responce.data)
+        instance.request(
+            {url, method, data}
+        ).then((responce) => responce.data)
 )
 
 export default sendRequest;

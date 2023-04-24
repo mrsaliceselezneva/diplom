@@ -1,7 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic");
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
 
 @mixin text($w, $s, $l, $c) {
-    font-family: "Comfortaa";
+    font-family: 'Comfortaa';
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -9,10 +9,10 @@
     color: $c;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap');
 
 @mixin textLatin($w, $s, $l, $c) {
-    font-family: "MuseoModerno";
+    font-family: 'MuseoModerno';
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -133,7 +133,7 @@ $header-height: 80px;
                 border-bottom-left-radius: 8px;
                 box-sizing: border-box;
                 cursor: pointer;
-                transition: all 0.3s ease-out;
+                transition: all 0.3s ease-in-out;
                 overflow: hidden;
                 position: relative;
             }
@@ -147,7 +147,7 @@ $header-height: 80px;
                 padding: 3px;
                 box-sizing: border-box;
                 cursor: pointer;
-                transition: all 0.3s ease-out;
+                transition: all 0.3s ease-in-out;
                 overflow: hidden;
                 position: relative;
             }
@@ -162,7 +162,7 @@ $header-height: 80px;
                 border-bottom-right-radius: 8px;
                 box-sizing: border-box;
                 cursor: pointer;
-                transition: all 0.3s ease-out;
+                transition: all 0.3s ease-in-out;
                 overflow: hidden;
             }
 
@@ -170,21 +170,18 @@ $header-height: 80px;
                 background-color: rgba(253, 244, 227, 0.7);
                 height: 45px;
                 width: 45px;
-                transition: all 0.3s ease-in;
             }
 
             &__user:hover {
                 background-color: rgba(253, 244, 227, 0.7);
                 height: 45px;
                 width: 45px;
-                transition: all 0.3s ease-in;
             }
 
             &__login:hover {
                 background-color: rgba(253, 244, 227, 0.7);
                 height: 45px;
                 width: 45px;
-                transition: all 0.3s ease-in;
             }
 
             &__left {
