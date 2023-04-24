@@ -1,8 +1,11 @@
+import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 import View from './View';
 
 
-function Controller({dispatch, setAdminLastName, setAdminName, setAdminPatronymic, setAdminEmail, setAdminPhone, setAdminPassword}) {
+function Controller({setAdminLastName, setAdminName, setAdminPatronymic, setAdminEmail, setAdminPhone, setAdminPassword}) {
+    const dispatch = useDispatch();
+
     const nameRef = useRef(null);
     const lastnameRef = useRef(null);
     const patronymicRef = useRef(null);

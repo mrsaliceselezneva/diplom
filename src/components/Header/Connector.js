@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { setLogout } from '../../redux/slices/tokenSlice';
 
@@ -20,14 +20,12 @@ const personalInfo = [
 ]
 
 function Connector() {
-    const dispatch = useDispatch();
     const { refreshToken } = useSelector((state) => state.tokenReducer);
 
     return (
         <Controller 
             institutionInfo={institutionInfo}
             personalInfo={personalInfo}
-            dispatch={dispatch}
             setLogout={setLogout}
             refreshToken={refreshToken}
         />

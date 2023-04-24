@@ -1,8 +1,10 @@
+import { useDispatch } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 
 import View from './View';
 
-function Controller({dispatch, setSelectFilter, setLinkFilter, selectFilter}) {
+function Controller({setSelectFilter, setLinkFilter, selectFilter}) {
+    const dispatch = useDispatch();
     const [filters, setFilters] = useState([]);
 
     useEffect(() => {

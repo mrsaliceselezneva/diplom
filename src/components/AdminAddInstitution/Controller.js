@@ -1,8 +1,10 @@
+import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 
 import View from './View';
 
-function Controller({dispatch, setInstitutionName, setInstitutionEmail}) {
+function Controller({setInstitutionName, setInstitutionEmail}) {
+    const dispatch = useDispatch();
     
 
     const nameRef = useRef(null);

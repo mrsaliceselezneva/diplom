@@ -1,7 +1,9 @@
+import { useDispatch } from 'react-redux';
 import View from './View';
 
 
-function Controller({institutionInfo, personalInfo, dispatch, setLogout, refreshToken}) {
+function Controller({institutionInfo, personalInfo, setLogout, refreshToken}) {
+    const dispatch = useDispatch();
 
     return (
         <View 

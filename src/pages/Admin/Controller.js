@@ -1,6 +1,9 @@
+import { useDispatch } from 'react-redux';
 import View from './View';
 
-function Controller({dispatch, selectFilter, setSelectFilter, activeButton, setActiveButton}) {
+function Controller({selectFilter, setSelectFilter, activeButton, setActiveButton}) {
+    const dispatch = useDispatch();
+    
     const updateSelectFilter = (value) => {
         dispatch(setSelectFilter(value));
     }

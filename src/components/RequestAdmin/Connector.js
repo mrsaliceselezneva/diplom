@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import Controller from './Controller';
 
 import {
@@ -11,11 +10,9 @@ import {
 } from '../../redux/slices/requestSlice';
 
 function Connector() {
-    const dispatch = useDispatch();
 
     return (
         <Controller 
-            dispatch={dispatch}
             setAdminLastName={setAdminLastName}
             setAdminName={setAdminName}
             setAdminPatronymic={setAdminPatronymic}
