@@ -1,3 +1,4 @@
+import { normalizeText, normalizePhone } from 'utils/helpers';
 import Controller from './Controller';
 
 import {
@@ -19,6 +20,8 @@ function Connector() {
             setAdminEmail={setAdminEmail}
             setAdminPhone={setAdminPhone}
             setAdminPassword={setAdminPassword}
+            normalizeText={normalizeText}
+            normalizePhone={normalizePhone}
         />
     );
 }

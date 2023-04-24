@@ -2,8 +2,7 @@ import { setInstitutionName, setInstitutionEmail } from '../../redux/slices/requ
 
 import Controller from './Controller';
 
-function Connector() {
-    
+function Connector() {  
 
     return (
        <Controller 

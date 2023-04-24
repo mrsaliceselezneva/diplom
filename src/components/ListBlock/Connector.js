@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import whichSquare from './helpers';
 import Controller from './Controller';
 
 
@@ -27,6 +28,7 @@ function Connector({ id, keys, val }) {
             keys={keys.slice(0, sliceSize)}
             val={val}
             inst={inst}
+            whichSquare={whichSquare}
         />
     );
 }

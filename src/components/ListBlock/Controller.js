@@ -1,21 +1,9 @@
-import { FiCheckSquare, FiSquare } from 'react-icons/fi';
-
 import View from './View';
 
 
-function Controller({ id, keys, val, inst }) {
+function Controller({ id, keys, val, inst, whichSquare }) {
 
-    const whichSquare = (k, v) => {
-        if (v === true)
-            return <FiCheckSquare />;
-        if (v === false)
-            return <FiSquare />;
-
-        if (k === 'institution_id') {
-            return inst[k];
-        }
-        return `${v}`;
-    }
+    
 
 
     return (
@@ -23,6 +11,7 @@ function Controller({ id, keys, val, inst }) {
             id={id}
             keys={keys}
             val={val}
+            inst={inst}
             whichSquare={whichSquare}
         />
     );

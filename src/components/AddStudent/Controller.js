@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+function Controller({normalizeText}) {
     const nameRef = useRef(null);
     const lastnameRef = useRef(null);
     const patronymicRef = useRef(null);
@@ -19,13 +19,6 @@ function Controller() {
 
     const [groupList, setGroupList] = useState([]);
     const [group, setGroup] = useState({});
-
-    const normalizeText = (value) => {
-        if (!value) return '';
-        const val = value.replace(/[^а-яёА-ЯЁ]/u, '');
-        if (val.length > 0) return val[0].toUpperCase() + val.slice(1).toLowerCase();
-        return '';
-    }
 
     function create(){
         const data = {
