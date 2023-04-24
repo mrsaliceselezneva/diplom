@@ -23,6 +23,11 @@ function Controller({normalizeText, normalizePhone}) {
         adminRef
     };
 
+    const changeLastname = () => {lastnameRef.current.value = normalizeText(lastnameRef.current.value)}
+    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
+    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
+    const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}
+
     function createTeacher(){
         const data = {
             email: emailRef.current.value,
@@ -42,10 +47,12 @@ function Controller({normalizeText, normalizePhone}) {
 
     return (
         <View
-            normalizeText={normalizeText}
-            normalizePhone={normalizePhone}
             ref={ref}
             createTeacher={() => createTeacher()}
+            changeLastname={changeLastname}
+            changeName={changeName}
+            changePatronymic={changePatronymic}
+            changePhone={changePhone}
         />
     );
 }

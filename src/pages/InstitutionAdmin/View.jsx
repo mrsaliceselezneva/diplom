@@ -3,13 +3,13 @@ import Sidebar from 'components/Sidebar';
 import styles from './styles.module.scss';
 
 
-function View({ selectButton, activeButton, setActiveButton, whichAdd }) {
+function View({ selectButton, activeButton, whichAdd, hide }) {
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__admin}>
                 <div className={styles.wrapper__admin__sidebar}>
-                    <div onClick={() => setActiveButton(false)}>
+                    <div onClick={hide}>
                         <Sidebar />
                     </div>
                     {selectButton}

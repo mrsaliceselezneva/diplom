@@ -9,26 +9,26 @@ import Sidebar from 'components/Sidebar';
 import styles from './styles.module.scss';
 
 
-function View({ activeButton, setActiveButton, selectFilter, setSelectFilter }) {
+function View({ activeButton, selectFilter, hide, show, selectnstitution, selectUser }) {
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__admin}>
                 <div className={styles.wrapper__admin__sidebar}>
-                    <div onClick={() => setActiveButton(false)}>
+                    <div onClick={hide}>
                         <Sidebar />
                     </div>
                     {selectFilter === 'организации' ?
-                        <div onClick={() => setActiveButton(true)}>
+                        <div onClick={show}>
                             <AdminAddButton
-                                setSelectAdd={() => { setSelectFilter('организации'); }}
+                                setSelectAdd={selectnstitution}
                                 title='добавить организацию'
                             />
                         </div>
                         :
-                        <div onClick={() => setActiveButton(true)}>
+                        <div onClick={show}>
                             <AdminAddButton
-                                setSelectAdd={() => { setSelectFilter('пользователи'); }}
+                                setSelectAdd={selectUser}
                                 title='добавить пользователя'
                             />
                         </div>

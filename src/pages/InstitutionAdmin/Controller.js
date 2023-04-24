@@ -71,13 +71,15 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
         return null;
     }
 
+    const hide = () => setActiveButton(false);
+
     return (
         <View 
             activeButton={activeButton}
             setActiveButton={setActiveButton}
             selectButton={selectButton()}
-            selectFilter={selectFilter}
             whichAdd={whichAdd()}
+            hide={hide}
         />
     );
 }

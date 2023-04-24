@@ -18,10 +18,17 @@ function Controller({normalizeText, normalizePhone}) {
         passwordRef
     };
 
+    const changeLastname = () => {lastnameRef.current.value = normalizeText(lastnameRef.current.value)}
+    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
+    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
+    const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}
+
     return (
         <View
-            normalizeText={normalizeText}
-            normalizePhone={normalizePhone}
+            changeLastname={changeLastname}
+            changeName={changeName}
+            changePatronymic={changePatronymic}
+            changePhone={changePhone}
             ref={ref}
         />
     );

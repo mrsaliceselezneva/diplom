@@ -17,11 +17,13 @@ function Controller({setInstitutionName, setInstitutionEmail}) {
         addressRef
     }
 
+    const changeName = () => {dispatch(setInstitutionName(ref.nameRef.current.value))}
+    const changeEmail = () => {dispatch(setInstitutionEmail(ref.emailRef.current.value))}
+
     return (
        <View 
-            dispatch={dispatch}
-            setInstitutionName={setInstitutionName}
-            setInstitutionEmail={setInstitutionEmail}
+            changeName={changeName}
+            changeEmail={changeEmail}
             ref={ref}
        />
     );

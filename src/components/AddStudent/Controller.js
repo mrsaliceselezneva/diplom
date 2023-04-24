@@ -33,6 +33,10 @@ function Controller({normalizeText}) {
         sendRequest('/student', 'post', data);
     }
 
+    const changeLastname = () => {lastnameRef.current.value = normalizeText(lastnameRef.current.value)}
+    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
+    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
+
     useEffect(() => {
         sendRequest('/group?institution=2', 'get').then((data) => {
             setGroupList(data.map((val) => val.name));
@@ -44,10 +48,12 @@ function Controller({normalizeText}) {
 
     return (
         <View
-            normalizeText={normalizeText}
             ref={ref}
             mas={groupList}
             create={() => create()}
+            changeLastname={changeLastname}
+            changeName={changeName}
+            changePatronymic={changePatronymic}
         />
     );
 }

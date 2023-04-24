@@ -22,18 +22,36 @@ function Controller({setAdminLastName, setAdminName, setAdminPatronymic, setAdmi
         passwordRef
     }
 
+    const changeLastname = () => {
+        lastnameRef.current.value = normalizeText(lastnameRef.current.value);
+        dispatch(setAdminLastName(lastnameRef.current.value));
+    }
+    const changeName = () => {
+        nameRef.current.value = normalizeText(nameRef.current.value);
+        dispatch(setAdminName(nameRef.current.value));
+    }
+    const changePatronymic = () => {
+        patronymicRef.current.value = normalizeText(patronymicRef.current.value);
+        dispatch(setAdminPatronymic(patronymicRef.current.value));
+    }
+    const changeEmail = () => {dispatch(setAdminEmail(emailRef.current.value))}
+    const changePhone = () => {
+        phoneRef.current.value = normalizePhone(phoneRef.current.value);
+        dispatch(setAdminPhone(phoneRef.current.value));
+    }
+    const changePassword = () => {
+        dispatch(setAdminPassword(passwordRef.current.value));
+    }
+
     return (
         <View 
-        dispatch={dispatch}
-        setAdminLastName={setAdminLastName}
-        setAdminName={setAdminName}
-        setAdminPatronymic={setAdminPatronymic}
-        setAdminEmail={setAdminEmail}
-        setAdminPhone={setAdminPhone}
-        setAdminPassword={setAdminPassword}
-        normalizeText={normalizeText}
-        normalizePhone={normalizePhone}
-        ref={ref}
+            changeLastname={changeLastname}
+            changeName={changeName}
+            changePatronymic={changePatronymic}
+            changeEmail={changeEmail}
+            changePhone={changePhone}
+            changePassword={changePassword}
+            ref={ref}
         />
     );
 }
