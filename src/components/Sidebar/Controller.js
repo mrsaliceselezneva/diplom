@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import styles from './Sidebar.module.scss';
-import SidebarBlock from '../SidebarBlock/SidebarBlock';
+import View from './View';
 
-import { setSelectFilter, setLinkFilter } from '../../redux/slices/sidebarSlice';
-
-function Sidebar() {
+function Controller({dispatch, setSelectFilter, setLinkFilter, selectFilter}) {
     const [filters, setFilters] = useState([]);
 
     useEffect(() => {
@@ -28,23 +24,15 @@ function Sidebar() {
         }
     }, [window.location.href]);
 
-    const dispatch = useDispatch();
-    const { selectFilter } = useSelector((state) => state.sidebarReducer);
     return (
-        <div className={styles.sidebar}>
-            {filters.map((filter) => (
-                <SidebarBlock
-                    key={filter.name}
-                    changeSelectGameType={() => {
-                        dispatch(setSelectFilter(filter.name));
-                        dispatch(setLinkFilter(filter.link));
-                    }}
-                    gameType={filter.name}
-                    select={selectFilter === filter.name}
-                />
-            ))}
-        </div>
+        <View
+            filters={filters}
+            dispatch={dispatch}
+            setSelectFilter={setSelectFilter}
+            setLinkFilter={setLinkFilter}
+            selectFilter={selectFilter}
+        />
     );
 }
 
-export default Sidebar;
+export default Controller;

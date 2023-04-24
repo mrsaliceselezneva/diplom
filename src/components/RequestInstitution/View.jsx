@@ -1,30 +1,28 @@
 
-import { useRef } from 'react';
-
-import { useDispatch } from 'react-redux';
+import { forwardRef } from 'react';
 import { YMaps } from '@pbe/react-yandex-maps';
 import InputTextBlock from 'components/InputBlock';
-import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 
-import styles from './RequestInstitution.module.scss';
+import styles from './styles.module.scss';
 
 import MapBlock from '../MapBlock';
 
-function ReuqestInstitution() {
-    const dispatch = useDispatch();
-
-    const nameRef = useRef(null);
-    const emailRef = useRef(null);
+const View = forwardRef((props, ref) => {
+    const {
+        dispatch,
+        setInstitutionName,
+        setInstitutionEmail
+    } = props;
 
     return (
         <>
             <InputTextBlock
                 title="название"
-                type="password"
+                type="text"
                 placeholder="Название"
-                ref={nameRef}
+                ref={ref.nameRef}
                 onChange={() => {
-                    dispatch(setInstitutionName(nameRef.current.value));
+                    dispatch(setInstitutionName(ref.nameRef.current.value));
                 }}
             />
 
@@ -32,9 +30,9 @@ function ReuqestInstitution() {
                 title="email"
                 type="text"
                 placeholder="email"
-                ref={emailRef}
+                ref={ref.emailRef}
                 onChange={() => {
-                    dispatch(setInstitutionEmail(emailRef.current.value));
+                    dispatch(setInstitutionEmail(ref.emailRef.current.value));
                 }}
             />
 
@@ -53,6 +51,6 @@ function ReuqestInstitution() {
             </div>
         </>
     );
-}
+})
 
-export default ReuqestInstitution;
+export default View;
