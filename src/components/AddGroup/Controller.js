@@ -2,10 +2,10 @@ import { useRef } from 'react';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const nameRef = useRef(null);
 
-    function create(){
+    function createGroup(){
         const data = {
             name: nameRef.current.value,
             institution_id: '2'
@@ -17,7 +17,7 @@ function Controller() {
     return (
         <View
             ref={nameRef}
-            create={() => create()}
+            create={() => createGroup()}
         />
     );
 }

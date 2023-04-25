@@ -1,16 +1,15 @@
-import { useState, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import styles from './styles.module.scss';
 
 
 
 const View = forwardRef((props, ref) => {
-    const { title, type, placeholder, onChange } = props;
-    const [on, setOn] = useState(false);
+    const { title, type, placeholder, onChange, on, setOff } = props;
     return (
         <div className={styles.wrapper}>
             {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-            <label className={styles.wrapper__label} htmlFor={title} onClick={() => setOn(!on)}>
+            <label className={styles.wrapper__label} htmlFor={title} onClick={setOff}>
                 <div className={styles.wrapper__label__title}>
                     {title}
                 </div>

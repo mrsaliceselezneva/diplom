@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Controller from './Controller';
 
 
-function Connector() {
+const Connector = () => {
     const {
         adminName,
         adminLastname,

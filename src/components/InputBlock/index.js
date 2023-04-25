@@ -1,2 +1,1 @@
-// eslint-disable-next-line no-restricted-exports
-export {default} from './Connector';
+export {default} from './View';

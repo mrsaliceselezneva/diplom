@@ -1,7 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic");
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
 
 @mixin text($w, $s, $l, $c) {
-    font-family: "Comfortaa";
+    font-family: 'Comfortaa';
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -21,21 +21,21 @@
     @include text(600, 18px, 16px, $text-color);
 }
 
-.select_game_type {
+.select_block_type {
     text-decoration: none;
     @include sidebar_block(#fffff0);
     background-color: #009b76;
 }
 
-.select_game_type:hover {
+.select_block_type:hover {
     color: #009b76;
     background-color: rgba(0, 155, 118, 0.3);
 }
 
-.game_type {
-    @include sidebar-block(#009b76);
+.block_type {
+    @include sidebar_block(#009b76);
 }
 
-.game_type:hover {
+.block_type:hover {
     background-color: rgba(0, 155, 118, 0.3);
 }

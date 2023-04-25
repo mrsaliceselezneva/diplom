@@ -5,7 +5,8 @@ import { BsBuildingFillAdd, BsBuildingFill } from 'react-icons/bs';
 import styles from './styles.module.scss';
 
 
-function View({ dispatch, setLogout, refreshToken, institutionInfo, personalInfo }) {
+const View = (props) => {
+    const { refreshToken, institutionInfo, personalInfo, logOut } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -37,7 +38,7 @@ function View({ dispatch, setLogout, refreshToken, institutionInfo, personalInfo
                             </div>
                             <FiLogOut
                                 className={styles.wrapper__header__menu__login}
-                                onClick={() => dispatch(setLogout())}
+                                onClick={logOut}
                             />
                             <div className={styles.wrapper__header__menu__right}>Выйти</div>
                         </>

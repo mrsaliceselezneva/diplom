@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { setSelectFilter } from 'redux/slices/sidebarSlice';
 import { useState } from 'react';
@@ -6,15 +6,13 @@ import { useState } from 'react';
 import Controller from './Controller';
 
 
-function Admin() {
-    const dispatch = useDispatch();
+const Connector = () => {
     const { selectFilter } = useSelector((state) => state.sidebarReducer);
 
     const [activeButton, setActiveButton] = useState(false);
 
     return (
         <Controller 
-            dispatch={dispatch}
             selectFilter={selectFilter}
             setSelectFilter={setSelectFilter}
             activeButton={activeButton}
@@ -23,4 +21,4 @@ function Admin() {
     );
 }
 
-export default Admin;
+export default Connector;

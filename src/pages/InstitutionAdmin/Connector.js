@@ -1,11 +1,10 @@
 import { useSelector } from 'react-redux';
-
 import { useState } from 'react';
 
 import Controller from './Controller';
 
 
-function Connector() {
+const Connector = () => {
     const { selectFilter } = useSelector((state) => state.sidebarReducer);
 
     const [activeButton, setActiveButton] = useState(false);

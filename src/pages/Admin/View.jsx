@@ -9,26 +9,27 @@ import Sidebar from 'components/Sidebar';
 import styles from './styles.module.scss';
 
 
-function View({ activeButton, setActiveButton, selectFilter, setSelectFilter }) {
+const View = (props) => {
+    const { activeButton, selectFilter, hideAdd, showAdd, selectnstitution, selectUser } = props;
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__admin}>
                 <div className={styles.wrapper__admin__sidebar}>
-                    <div onClick={() => setActiveButton(false)}>
+                    <div onClick={hideAdd}>
                         <Sidebar />
                     </div>
                     {selectFilter === 'организации' ?
-                        <div onClick={() => setActiveButton(true)}>
+                        <div onClick={showAdd}>
                             <AdminAddButton
-                                setSelectAdd={() => { setSelectFilter('организации'); }}
+                                setSelectAdd={selectnstitution}
                                 title='добавить организацию'
                             />
                         </div>
                         :
-                        <div onClick={() => setActiveButton(true)}>
+                        <div onClick={showAdd}>
                             <AdminAddButton
-                                setSelectAdd={() => { setSelectFilter('пользователи'); }}
+                                setSelectAdd={selectUser}
                                 title='добавить пользователя'
                             />
                         </div>

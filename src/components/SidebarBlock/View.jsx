@@ -1,10 +1,14 @@
 import styles from './styles.module.scss';
 
-function View({ changeSelectBlockType, blockType, select }) {
+const View = (props) => {
+    const { changeSelectBlockType, blockType, select } = props;
+
+    const className = select ? styles.select_block_type : styles.block_type;
+
     return (
         <div
             onClick={changeSelectBlockType}
-            className={select ? styles.select_game_type : styles.game_type}>
+            className={className}>
             {blockType}
         </div>
     );

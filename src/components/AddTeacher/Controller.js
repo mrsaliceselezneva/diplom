@@ -1,10 +1,11 @@
 import { useRef } from 'react';
+import { normalizePhone, normalizeText } from 'utils/helpers';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const nameRef = useRef(null);
-    const lastnameRef = useRef(null);
+    const lastNameRef = useRef(null);
     const patronymicRef = useRef(null);
     const phoneRef = useRef(null);
     const emailRef = useRef(null);
@@ -14,7 +15,7 @@ function Controller() {
     
     const ref = {
         nameRef,
-        lastnameRef,
+        lastNameRef,
         patronymicRef,
         phoneRef,
         emailRef,
@@ -23,31 +24,17 @@ function Controller() {
         adminRef
     };
 
-    const normalizeText = (value) => {
-        if (!value) return '';
-        const val = value.replace(/[^а-яёА-ЯЁ]/u, '');
-        if (val.length > 0) return val[0].toUpperCase() + val.slice(1).toLowerCase();
-        return '';
-    }
-
-    const normalizePhone = (value) => {
-        if (!value) return '';
-        let val;
-        if (value.length === 1) val = value.replace(/[^\d]/g, '');
-        else val = value.replace(/[^\d]/g, '').slice(1);
-        if (val.length < 4) {
-            return `+7 (${val}`;
-        }
-        if (val.length < 7) return `+7 (${val.slice(0, 3)}) ${val.slice(3)}`;
-        return `+7 (${val.slice(0, 3)}) ${val.slice(3, 6)}-${val.slice(6, 10)}`;
-    }
+    const changeLastname = () => {lastNameRef.current.value = normalizeText(lastNameRef.current.value)}
+    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
+    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
+    const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}
 
     function createTeacher(){
         const data = {
             email: emailRef.current.value,
             username: emailRef.current.value,
             first_name: nameRef.current.value,
-            last_name: lastnameRef.current.value,
+            last_name: lastNameRef.current.value,
             patronymic: patronymicRef.current.value,
             institution_id: '2',
             is_teacher: teacherRef.current.checked,
@@ -61,10 +48,12 @@ function Controller() {
 
     return (
         <View
-            normalizeText={normalizeText}
-            normalizePhone={normalizePhone}
             ref={ref}
             createTeacher={() => createTeacher()}
+            changeLastname={changeLastname}
+            changeName={changeName}
+            changePatronymic={changePatronymic}
+            changePhone={changePhone}
         />
     );
 }

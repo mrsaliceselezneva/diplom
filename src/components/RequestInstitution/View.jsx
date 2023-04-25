@@ -9,9 +9,8 @@ import MapBlock from '../MapBlock';
 
 const View = forwardRef((props, ref) => {
     const {
-        dispatch,
-        setInstitutionName,
-        setInstitutionEmail
+        changeName,
+        changeEmail
     } = props;
 
     return (
@@ -21,9 +20,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="Название"
                 ref={ref.nameRef}
-                onChange={() => {
-                    dispatch(setInstitutionName(ref.nameRef.current.value));
-                }}
+                onChange={changeName}
             />
 
             <InputTextBlock
@@ -31,9 +28,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="email"
                 ref={ref.emailRef}
-                onChange={() => {
-                    dispatch(setInstitutionEmail(ref.emailRef.current.value));
-                }}
+                onChange={changeEmail}
             />
 
             <div className={styles.label}>

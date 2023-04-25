@@ -1,16 +1,24 @@
+import { useDispatch } from 'react-redux';
 import View from './View';
 
-function Controller({dispatch, selectFilter, setSelectFilter, activeButton, setActiveButton}) {
-    const updateSelectFilter = (value) => {
-        dispatch(setSelectFilter(value));
-    }
+const Controller = (props) => {
+    const {selectFilter, setSelectFilter, activeButton, setActiveButton} = props;
+    const dispatch = useDispatch();
+
+    const showAdd = () => setActiveButton(true);
+    const hideAdd = () => setActiveButton(false);
+
+    const selectnstitution = () => dispatch(setSelectFilter('организации'));
+    const selectUser = () => dispatch(setSelectFilter('пользователи'));
 
     return (
        <View 
             activeButton={activeButton}
-            setActiveButton={setActiveButton}
             selectFilter={selectFilter}
-            setSelectFilter={updateSelectFilter}
+            showAdd={showAdd}
+            hideAdd={hideAdd}
+            selectnstitution={selectnstitution}
+            selectUser={selectUser}
        />
     );
 }

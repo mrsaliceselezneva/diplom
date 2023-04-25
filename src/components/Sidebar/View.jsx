@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
 import SidebarBlock from '../SidebarBlock';
 
-function View({ filters, dispatch, setSelectFilter, setLinkFilter, selectFilter }) {
-
+const View = (props) => {
+    const { filters, dispatch, setSelectFilter, setLinkFilter, selectFilter } = props;
     return (
         <div className={styles.sidebar}>
             {filters.map((filter) => (

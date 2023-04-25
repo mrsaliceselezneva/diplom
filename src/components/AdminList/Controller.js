@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import View from './View';
 
 
-function Controller({dict, linkFilter}) {
+const Controller = (props) => {
+    const {dict, linkFilter} = props;
 
     const [list, setList] = useState([]);
     const [keys, setKeys] = useState([]);

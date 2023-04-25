@@ -3,15 +3,12 @@ import InputTextBlock from 'components/InputBlock';
 
 const View = forwardRef((props, ref) => {
     const {
-        dispatch,
-        setAdminLastName,
-        setAdminName,
-        setAdminPatronymic,
-        setAdminEmail,
-        setAdminPhone,
-        setAdminPassword,
-        normalizeText,
-        normalizePhone
+        changeLastname,
+        changeName,
+        changePatronymic,
+        changeEmail,
+        changePhone,
+        changePassword
     } = props;
 
     return (
@@ -21,10 +18,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="Фамилия"
                 ref={ref.lastnameRef}
-                onChange={() => {
-                    ref.lastnameRef.current.value = normalizeText(ref.lastnameRef.current.value);
-                    dispatch(setAdminLastName(ref.lastnameRef.current.value));
-                }}
+                onChange={changeLastname}
             />
 
             <InputTextBlock
@@ -32,10 +26,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="Имя"
                 ref={ref.nameRef}
-                onChange={() => {
-                    ref.nameRef.current.value = normalizeText(ref.nameRef.current.value);
-                    dispatch(setAdminName(ref.nameRef.current.value));
-                }}
+                onChange={changeName}
             />
 
             <InputTextBlock
@@ -43,10 +34,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="Отчество"
                 ref={ref.patronymicRef}
-                onChange={() => {
-                    ref.patronymicRef.current.value = normalizeText(ref.patronymicRef.current.value);
-                    dispatch(setAdminPatronymic(ref.patronymicRef.current.value));
-                }}
+                onChange={changePatronymic}
             />
 
             <InputTextBlock
@@ -54,7 +42,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="email"
                 ref={ref.emailRef}
-                onChange={() => dispatch(setAdminEmail(ref.emailRef.current.value))}
+                onChange={changeEmail}
             />
 
             <InputTextBlock
@@ -62,10 +50,7 @@ const View = forwardRef((props, ref) => {
                 type="text"
                 placeholder="Телефон"
                 ref={ref.phoneRef}
-                onChange={() => {
-                    ref.phoneRef.current.value = normalizePhone(ref.phoneRef.current.value);
-                    dispatch(setAdminPhone(ref.phoneRef.current.value));
-                }}
+                onChange={changePhone}
             />
 
             <InputTextBlock
@@ -73,9 +58,7 @@ const View = forwardRef((props, ref) => {
                 type="password"
                 placeholder="Пароль"
                 ref={ref.passwordRef}
-                onChange={() => {
-                    dispatch(setAdminPassword(ref.passwordRef.current.value));
-                }}
+                onChange={changePassword}
             />
         </>
     );

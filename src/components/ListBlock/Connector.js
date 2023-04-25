@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import getCurrentSquare from './helpers';
 import Controller from './Controller';
 
 
-function Connector({ id, keys, val }) {
+const Connector = (props) => {
+    const { id, keys, val } = props;
 
     const [inst, setInst] = useState({});
     const sliceSize = 4;
@@ -27,6 +29,7 @@ function Connector({ id, keys, val }) {
             keys={keys.slice(0, sliceSize)}
             val={val}
             inst={inst}
+            getCurrentSquare={getCurrentSquare}
         />
     );
 }

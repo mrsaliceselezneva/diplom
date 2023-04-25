@@ -1,8 +1,11 @@
-import { forwardRef } from 'react';
-import View from './View';
+import { useState, forwardRef } from 'react';
+import View from "./View";
 
 const Controller = forwardRef((props, ref) => {
     const { title, type, placeholder, onChange } = props;
+    const [on, setOn] = useState(false);
+
+    const setOff = () => setOn(!on);
 
     return (
         <View 
@@ -10,9 +13,11 @@ const Controller = forwardRef((props, ref) => {
             type={type}
             placeholder={placeholder}
             onChange={onChange}
+            on={on}
+            setOff={setOff}
             ref={ref}
         />
-        );
+    )
 })
 
 export default Controller;

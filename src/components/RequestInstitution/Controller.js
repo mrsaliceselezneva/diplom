@@ -1,7 +1,11 @@
+import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
+import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 import View from './View';
 
-function Controller({dispatch, setInstitutionName, setInstitutionEmail}) {
+const Controller = () => {
+    const dispatch = useDispatch();
+
     const nameRef = useRef(null);
     const emailRef = useRef(null);
 
@@ -10,11 +14,18 @@ function Controller({dispatch, setInstitutionName, setInstitutionEmail}) {
         emailRef
     }
 
+    const changeName = () => {
+        dispatch(setInstitutionName(ref.nameRef.current.value));
+    }
+
+    const changeEmail = () => {
+        dispatch(setInstitutionEmail(ref.emailRef.current.value));
+    }
+
     return (
        <View
-            dispatch={dispatch}
-            setInstitutionName={setInstitutionName}
-            setInstitutionEmail={setInstitutionEmail}
+            changeName={changeName}
+            changeEmail={changeEmail}
             ref={ref}
        />
     );

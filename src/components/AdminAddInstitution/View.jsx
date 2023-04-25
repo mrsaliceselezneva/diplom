@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import styles from './styles.module.scss';
 
 const View = forwardRef((props, ref) => {
-    const { dispatch, setInstitutionName, setInstitutionEmail } = props;
+    const { changeName, changeEmail } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -14,9 +14,7 @@ const View = forwardRef((props, ref) => {
                         type="text"
                         placeholder="Название"
                         ref={ref.nameRef}
-                        onChange={() => {
-                            dispatch(setInstitutionName(ref.nameRef.current.value));
-                        }}
+                        onChange={changeName}
                     />
 
                     <InputTextBlock
@@ -24,9 +22,7 @@ const View = forwardRef((props, ref) => {
                         type="text"
                         placeholder="email"
                         ref={ref.emailRef}
-                        onChange={() => {
-                            dispatch(setInstitutionEmail(ref.emailRef.current.value));
-                        }}
+                        onChange={changeEmail}
                     />
 
                     <InputTextBlock

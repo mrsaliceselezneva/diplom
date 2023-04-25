@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
+import { normalizeText } from 'utils/helpers';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const nameRef = useRef(null);
-    const lastnameRef = useRef(null);
+    const lastNameRef = useRef(null);
     const patronymicRef = useRef(null);
     const emailRef = useRef(null);
     const groupRef = useRef(null);
     
     const ref = {
         nameRef,
-        lastnameRef,
+        lastNameRef,
         patronymicRef,
         emailRef,
         groupRef
@@ -20,17 +21,10 @@ function Controller() {
     const [groupList, setGroupList] = useState([]);
     const [group, setGroup] = useState({});
 
-    const normalizeText = (value) => {
-        if (!value) return '';
-        const val = value.replace(/[^а-яёА-ЯЁ]/u, '');
-        if (val.length > 0) return val[0].toUpperCase() + val.slice(1).toLowerCase();
-        return '';
-    }
-
-    function create(){
+    function createStudent(){
         const data = {
             email: emailRef.current.value,
-            last_name: lastnameRef.current.value,
+            last_name: lastNameRef.current.value,
             first_name: nameRef.current.value,
             patronymic: patronymicRef.current.value,
             institution_id: '2',
@@ -39,6 +33,10 @@ function Controller() {
           
         sendRequest('/student', 'post', data);
     }
+
+    const changeLastname = () => {lastNameRef.current.value = normalizeText(lastNameRef.current.value)}
+    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
+    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
 
     useEffect(() => {
         sendRequest('/group?institution=2', 'get').then((data) => {
@@ -51,10 +49,12 @@ function Controller() {
 
     return (
         <View
-            normalizeText={normalizeText}
             ref={ref}
             mas={groupList}
-            create={() => create()}
+            createStudent={() => createStudent()}
+            changeLastname={changeLastname}
+            changeName={changeName}
+            changePatronymic={changePatronymic}
         />
     );
 }

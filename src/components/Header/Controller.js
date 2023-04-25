@@ -1,7 +1,13 @@
+import { useDispatch } from 'react-redux';
 import View from './View';
 
 
-function Controller({institutionInfo, personalInfo, dispatch, setLogout, refreshToken}) {
+const Controller = (props) => {
+    const {institutionInfo, personalInfo, setLogout, refreshToken} = props;
+
+    const dispatch = useDispatch();
+    
+    const logOut = () => dispatch(setLogout());
 
     return (
         <View 
@@ -10,6 +16,7 @@ function Controller({institutionInfo, personalInfo, dispatch, setLogout, refresh
             dispatch={dispatch}
             setLogout={setLogout}
             refreshToken={refreshToken}
+            logOut={logOut}
         />
     );
 }

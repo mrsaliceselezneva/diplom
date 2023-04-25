@@ -1,7 +1,8 @@
 import ListBlock from 'components/ListBlock';
 import styles from './styles.module.scss';
 
-function View({ keys, dict, list }) {
+const View = (props) => {
+    const { keys, dict, list } = props;
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__institution}>
@@ -14,7 +15,7 @@ function View({ keys, dict, list }) {
                 </div>
                 <div className={styles.wrapper__institution__list}>
                     {list.map((val, id) =>
-                        <ListBlock id={id} key={val.id} keys={keys} val={val} />
+                        <ListBlock id={id} key={val.id + id} keys={keys} val={val} />
                     )}
                 </div>
             </div>

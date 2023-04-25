@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import styles from './styles.module.scss';
 
 const View = forwardRef((props, ref) => {
-    const { create } = props;
+    const { createGroup } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -23,7 +23,7 @@ const View = forwardRef((props, ref) => {
                             type="submit"
                             className={styles.wrapper__institution__label__submit}
                             value="Создать"
-                            onClick={create}
+                            onClick={createGroup}
                         />
                     </label>
                 </form>

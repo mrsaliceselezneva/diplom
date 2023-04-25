@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 import styles from './styles.module.scss';
 
 const View = forwardRef((props, ref) => {
-    const { normalizeText, normalizePhone, createTeacher } = props;
+    const { createTeacher, changeLastname, changeName, changePatronymic, changePhone } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -17,11 +17,7 @@ const View = forwardRef((props, ref) => {
                         type="text"
                         placeholder="Фамилия"
                         ref={ref.lastnameRef}
-                        onChange={() => {
-                            ref.lastnameRef.current.value = normalizeText(
-                                ref.lastnameRef.current.value,
-                            );
-                        }}
+                        onChange={changeLastname}
                     />
 
                     <InputBlock
@@ -29,9 +25,7 @@ const View = forwardRef((props, ref) => {
                         type="text"
                         placeholder="Имя"
                         ref={ref.nameRef}
-                        onChange={() => {
-                            ref.nameRef.current.value = normalizeText(ref.nameRef.current.value);
-                        }}
+                        onChange={changeName}
                     />
 
                     <InputBlock
@@ -39,11 +33,7 @@ const View = forwardRef((props, ref) => {
                         type="text"
                         placeholder="Отчество"
                         ref={ref.patronymicRef}
-                        onChange={() => {
-                            ref.patronymicRef.current.value = normalizeText(
-                                ref.patronymicRef.current.value,
-                            );
-                        }}
+                        onChange={changePatronymic}
                     />
 
                     <InputBlock
@@ -73,9 +63,7 @@ const View = forwardRef((props, ref) => {
                         type="text"
                         placeholder="Телефон"
                         ref={ref.phoneRef}
-                        onChange={() => {
-                            ref.phoneRef.current.value = normalizePhone(ref.phoneRef.current.value);
-                        }}
+                        onChange={changePhone}
                     />
 
                     <InputBlock

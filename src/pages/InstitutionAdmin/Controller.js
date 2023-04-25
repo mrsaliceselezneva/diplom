@@ -4,11 +4,13 @@ import AddClassroom from 'components/AddClassroom';
 import AddCall from 'components/AddCall';
 import AddGroup from 'components/AddGroup';
 import AddStudent from 'components/AddStudent';
+import AddLesson from 'components/AddLesson';
+
 import View from './View';
 
 
-function Controller({activeButton, setActiveButton, selectFilter}) {
-
+const Controller = (props) => {
+    const {activeButton, setActiveButton, selectFilter} = props;
 
     function selectButton() {
         if (selectFilter === 'учителя')
@@ -51,6 +53,14 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
                     />
                 </div>
             )
+        if (selectFilter === 'занятия')
+            return (
+                <div onClick={() => setActiveButton(true)}>
+                    <AdminAddButton
+                        title='добавить занятие'
+                    />
+                </div>
+            )
         return null;
     }
 
@@ -66,17 +76,21 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
                 return <AddGroup />;
             if (selectFilter === 'ученики')
                 return <AddStudent />;
+            if (selectFilter === 'занятия')
+                return <AddLesson />;
         }
         return null;
     }
+
+    const hideAdd = () => setActiveButton(false);
 
     return (
         <View 
             activeButton={activeButton}
             setActiveButton={setActiveButton}
             selectButton={selectButton()}
-            selectFilter={selectFilter}
             whichAdd={whichAdd()}
+            hideAdd={hideAdd}
         />
     );
 }

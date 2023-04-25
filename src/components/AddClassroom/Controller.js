@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const nameRef = useRef(null);
     const typeRef = useRef(null);
     const multitaskingRef = useRef(false);
