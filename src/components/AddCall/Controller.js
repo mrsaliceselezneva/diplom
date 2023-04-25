@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const timeRef = useRef(null);
     const pauseRef = useRef(null);
     

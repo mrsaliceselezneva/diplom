@@ -9,7 +9,7 @@ import { setInstitutionAddress } from '../../redux/slices/requestSlice';
 
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const dispatch = useDispatch();
 
     const mapRef = useRef(null);

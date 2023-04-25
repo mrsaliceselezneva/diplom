@@ -1,10 +1,11 @@
 import { useRef } from 'react';
+import { normalizePhone, normalizeText } from 'utils/helpers';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller({normalizeText, normalizePhone}) {
+const Controller = () => {
     const nameRef = useRef(null);
-    const lastnameRef = useRef(null);
+    const lastNameRef = useRef(null);
     const patronymicRef = useRef(null);
     const phoneRef = useRef(null);
     const emailRef = useRef(null);
@@ -14,7 +15,7 @@ function Controller({normalizeText, normalizePhone}) {
     
     const ref = {
         nameRef,
-        lastnameRef,
+        lastNameRef,
         patronymicRef,
         phoneRef,
         emailRef,
@@ -23,17 +24,17 @@ function Controller({normalizeText, normalizePhone}) {
         adminRef
     };
 
-    const changeLastname = () => {lastnameRef.current.value = normalizeText(lastnameRef.current.value)}
+    const changeLastname = () => {lastNameRef.current.value = normalizeText(lastNameRef.current.value)}
     const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
     const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
     const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}
 
-    function create(){
+    function createTeacher(){
         const data = {
             email: emailRef.current.value,
             username: emailRef.current.value,
             first_name: nameRef.current.value,
-            last_name: lastnameRef.current.value,
+            last_name: lastNameRef.current.value,
             patronymic: patronymicRef.current.value,
             institution_id: '2',
             is_teacher: teacherRef.current.checked,
@@ -48,7 +49,7 @@ function Controller({normalizeText, normalizePhone}) {
     return (
         <View
             ref={ref}
-            create={() => create()}
+            createTeacher={() => createTeacher()}
             changeLastname={changeLastname}
             changeName={changeName}
             changePatronymic={changePatronymic}

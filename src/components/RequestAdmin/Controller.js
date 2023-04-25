@@ -1,9 +1,18 @@
 import { useDispatch } from 'react-redux';
+import { normalizeText, normalizePhone } from 'utils/helpers';
 import { useRef } from 'react';
+import {
+    setAdminEmail,
+    setAdminLastName,
+    setAdminName,
+    setAdminPassword,
+    setAdminPatronymic,
+    setAdminPhone,
+} from '../../redux/slices/requestSlice';
 import View from './View';
 
 
-function Controller({setAdminLastName, setAdminName, setAdminPatronymic, setAdminEmail, setAdminPhone, setAdminPassword, normalizeText, normalizePhone}) {
+const Controller = () => {
     const dispatch = useDispatch();
 
     const nameRef = useRef(null);

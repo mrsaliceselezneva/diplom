@@ -3,8 +3,8 @@ import RequestInstitution from 'components/RequestInstitution';
 import styles from './styles.module.scss';
 
 
-function View({ active, setActive, send }) {
-
+const View = (props) => {
+    const { active, setActive, sendRequest } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -41,7 +41,7 @@ function View({ active, setActive, send }) {
                         type="submit"
                         className={styles.wrapper__form__label__submit}
                         value="Отправить"
-                        onClick={send}
+                        onClick={sendRequest}
                     />
                 </label>
             </form>

@@ -1,18 +1,15 @@
 import View from './View';
 
 
-function Controller({ id, keys, val, inst, whichSquare }) {
-
-    
-
-
+const Controller = (props) => {
+    const { id, keys, val, inst, getCurrentSquare } = props;
     return (
         <View
             id={id}
             keys={keys}
             val={val}
             inst={inst}
-            whichSquare={whichSquare}
+            getCurrentSquare={getCurrentSquare}
         />
     );
 }

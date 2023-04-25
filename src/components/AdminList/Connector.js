@@ -29,7 +29,7 @@ const dict = {
     'weekday': 'день'
 }
 
-function Connector() {
+const Connector = () => {
     const { linkFilter } = useSelector((state) => state.sidebarReducer);
 
     return (

@@ -9,8 +9,8 @@ import AddLesson from 'components/AddLesson';
 import View from './View';
 
 
-function Controller({activeButton, setActiveButton, selectFilter}) {
-
+const Controller = (props) => {
+    const {activeButton, setActiveButton, selectFilter} = props;
 
     function selectButton() {
         if (selectFilter === 'учителя')
@@ -82,7 +82,7 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
         return null;
     }
 
-    const hide = () => setActiveButton(false);
+    const hideAdd = () => setActiveButton(false);
 
     return (
         <View 
@@ -90,7 +90,7 @@ function Controller({activeButton, setActiveButton, selectFilter}) {
             setActiveButton={setActiveButton}
             selectButton={selectButton()}
             whichAdd={whichAdd()}
-            hide={hide}
+            hideAdd={hideAdd}
         />
     );
 }

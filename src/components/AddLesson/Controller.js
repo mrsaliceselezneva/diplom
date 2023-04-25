@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import sendRequest from 'api/utils';
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const teacherRef = useRef(null);
     const callRef = useRef(null);
     const classroomRef = useRef(null);
@@ -28,7 +28,7 @@ function Controller() {
         weekdayRef
     };
 
-    function create(){
+    function createLesson(){
         const data = {
             teacher_id: teacherId[teacherRef.current.value],
             call_id: callId[callRef.current.value],
@@ -71,7 +71,7 @@ function Controller() {
     return (
         <View
             ref={ref}
-            create={() => create()}
+            create={() => createLesson()}
             teacherList={teacherList}
             callList={callList}
             classroomList={classroomList}

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Controller from './Controller';
 
 
-function Admin() {
+const Connector = () => {
     const { selectFilter } = useSelector((state) => state.sidebarReducer);
 
     const [activeButton, setActiveButton] = useState(false);
@@ -21,4 +21,4 @@ function Admin() {
     );
 }
 
-export default Admin;
+export default Connector;

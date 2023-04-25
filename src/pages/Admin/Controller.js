@@ -1,11 +1,12 @@
 import { useDispatch } from 'react-redux';
 import View from './View';
 
-function Controller({selectFilter, setSelectFilter, activeButton, setActiveButton}) {
+const Controller = (props) => {
+    const {selectFilter, setSelectFilter, activeButton, setActiveButton} = props;
     const dispatch = useDispatch();
 
-    const show = () => setActiveButton(true);
-    const hide = () => setActiveButton(false);
+    const showAdd = () => setActiveButton(true);
+    const hideAdd = () => setActiveButton(false);
 
     const selectnstitution = () => dispatch(setSelectFilter('организации'));
     const selectUser = () => dispatch(setSelectFilter('пользователи'));
@@ -14,8 +15,8 @@ function Controller({selectFilter, setSelectFilter, activeButton, setActiveButto
        <View 
             activeButton={activeButton}
             selectFilter={selectFilter}
-            show={show}
-            hide={hide}
+            showAdd={showAdd}
+            hideAdd={hideAdd}
             selectnstitution={selectnstitution}
             selectUser={selectUser}
        />

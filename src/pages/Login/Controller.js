@@ -7,7 +7,7 @@ import { setRefreshToken, setAccessToken } from '../../redux/slices/tokenSlice';
 
 import View from './View';
 
-function Controller() {
+const Controller = () => {
     const dispatch = useDispatch();
 
     const emailRef = useRef(null);

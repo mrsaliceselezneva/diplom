@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
+import { setInstitutionEmail, setInstitutionName } from '../../redux/slices/requestSlice';
 import View from './View';
 
-function Controller({setInstitutionName, setInstitutionEmail}) {
+const Controller = () => {
     const dispatch = useDispatch();
 
     const nameRef = useRef(null);

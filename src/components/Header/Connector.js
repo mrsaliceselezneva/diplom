@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-
 import { setLogout } from '../../redux/slices/tokenSlice';
 
 import Controller from './Controller';
@@ -19,7 +18,7 @@ const personalInfo = [
     '89278070727',
 ]
 
-function Connector() {
+const Connector = () => {
     const { refreshToken } = useSelector((state) => state.tokenReducer);
 
     return (

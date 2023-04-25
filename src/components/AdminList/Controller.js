@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import View from './View';
 
 
-function Controller({dict, linkFilter}) {
+const Controller = (props) => {
+    const {dict, linkFilter} = props;
 
     const [list, setList] = useState([]);
     const [keys, setKeys] = useState([]);
@@ -20,7 +21,6 @@ function Controller({dict, linkFilter}) {
                     mas.push(key);
                 }
                 setKeys(mas);
-                console.log(response.data);
             })
             .catch((error) => {
                 setList([]);

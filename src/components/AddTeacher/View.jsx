@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 import styles from './styles.module.scss';
 
 const View = forwardRef((props, ref) => {
-    const { create, changeLastname, changeName, changePatronymic, changePhone } = props;
+    const { createTeacher, changeLastname, changeName, changePatronymic, changePhone } = props;
 
     return (
         <div className={styles.wrapper}>
@@ -78,7 +78,7 @@ const View = forwardRef((props, ref) => {
                             type="submit"
                             className={styles.wrapper__institution__label__submit}
                             value="Создать"
-                            onClick={create}
+                            onClick={createTeacher}
                         />
                     </label>
                 </form>

@@ -1,6 +1,6 @@
 import { FiCheckSquare, FiSquare } from 'react-icons/fi';
 
-const whichSquare = (inst, k, v) => {
+const getCurrentSquare = (inst, k, v) => {
     if (v === true)
         return <FiCheckSquare />;
     if (v === false)
@@ -12,4 +12,4 @@ const whichSquare = (inst, k, v) => {
     return `${v}`;
 }
 
-export default whichSquare;
+export default getCurrentSquare;

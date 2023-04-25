@@ -9,24 +9,25 @@ import Sidebar from 'components/Sidebar';
 import styles from './styles.module.scss';
 
 
-function View({ activeButton, selectFilter, hide, show, selectnstitution, selectUser }) {
+const View = (props) => {
+    const { activeButton, selectFilter, hideAdd, showAdd, selectnstitution, selectUser } = props;
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__admin}>
                 <div className={styles.wrapper__admin__sidebar}>
-                    <div onClick={hide}>
+                    <div onClick={hideAdd}>
                         <Sidebar />
                     </div>
                     {selectFilter === 'организации' ?
-                        <div onClick={show}>
+                        <div onClick={showAdd}>
                             <AdminAddButton
                                 setSelectAdd={selectnstitution}
                                 title='добавить организацию'
                             />
                         </div>
                         :
-                        <div onClick={show}>
+                        <div onClick={showAdd}>
                             <AdminAddButton
                                 setSelectAdd={selectUser}
                                 title='добавить пользователя'

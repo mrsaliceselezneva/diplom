@@ -5,10 +5,11 @@ import View from './View';
 
 import { setClear } from '../../redux/slices/requestSlice';
 
-function Controller({active, setActive, data}) {
+const Controller = (props) => {
+    const {active, setActive, data} = props;
     const dispatch = useDispatch();
 
-    function send() {
+    function sendRequest() {
         axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then(() => {
             dispatch(setClear);
         });
@@ -16,7 +17,7 @@ function Controller({active, setActive, data}) {
 
     return (
         <View 
-            send={() => send()}
+            sendRequest={() => sendRequest()}
             active={active}
             setActive={setActive}
 

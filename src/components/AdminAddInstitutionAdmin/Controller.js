@@ -1,9 +1,10 @@
+import { normalizePhone, normalizeText } from 'utils/helpers';
 import { useRef } from 'react';
 import View from './View';
 
-function Controller({normalizeText, normalizePhone}) {
+const Controller = () => {
     const nameRef = useRef(null);
-    const lastnameRef = useRef(null);
+    const lastNameRef = useRef(null);
     const patronymicRef = useRef(null);
     const phoneRef = useRef(null);
     const emailRef = useRef(null);
@@ -11,14 +12,14 @@ function Controller({normalizeText, normalizePhone}) {
 
     const ref = {
         nameRef,
-        lastnameRef,
+        lastNameRef,
         patronymicRef,
         phoneRef,
         emailRef,
         passwordRef
     };
 
-    const changeLastname = () => {lastnameRef.current.value = normalizeText(lastnameRef.current.value)}
+    const changeLastname = () => {lastNameRef.current.value = normalizeText(lastNameRef.current.value)}
     const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
     const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
     const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}

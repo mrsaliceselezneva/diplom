@@ -1,9 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
+import { setSelectFilter, setLinkFilter } from '../../redux/slices/sidebarSlice';
 
 import View from './View';
 
-function Controller({setSelectFilter, setLinkFilter, selectFilter}) {
+const Controller = () => {
+    const { selectFilter } = useSelector((state) => state.sidebarReducer);
     const dispatch = useDispatch();
     const [filters, setFilters] = useState([]);
 
