@@ -20,6 +20,7 @@ function Controller({dict, linkFilter}) {
                     mas.push(key);
                 }
                 setKeys(mas);
+                console.log(response.data);
             })
             .catch((error) => {
                 setList([]);

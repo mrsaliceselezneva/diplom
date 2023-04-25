@@ -20,7 +20,13 @@ const dict = {
     'multitasking': 'дистант',
 
     'time_start': 'начало',
-    'pause': 'длится'
+    'pause': 'длится',
+
+    'teacher': 'учитель',
+    'call': 'начало',
+    'classroom': 'кабинет',
+    'group': 'группа',
+    'weekday': 'день'
 }
 
 function Connector() {

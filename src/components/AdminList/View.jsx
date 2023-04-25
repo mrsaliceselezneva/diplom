@@ -14,7 +14,7 @@ function View({ keys, dict, list }) {
                 </div>
                 <div className={styles.wrapper__institution__list}>
                     {list.map((val, id) =>
-                        <ListBlock id={id} key={val.id} keys={keys} val={val} />
+                        <ListBlock id={id} key={val.id + id} keys={keys} val={val} />
                     )}
                 </div>
             </div>
