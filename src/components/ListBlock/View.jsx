@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 const View = (props) => {
     const { id, keys, val, inst, getCurrentSquare } = props;
     const classNameListblock = id % 2 ? styles.wrapper__listblock0 : styles.wrapper__listblock1;
+    const classNameListblockDel = id % 2 ? styles.wrapper__listblock0__del : styles.wrapper__listblock1__del;
     const classNameBlock = id % 2 ? styles.wrapper__listblock0__block : styles.wrapper__listblock1__block;
 
     return (
@@ -16,7 +17,7 @@ const View = (props) => {
                     </div>
                 )}
             </div>
-            <FiX className={id % 2 ? styles.wrapper__listblock0__del : styles.wrapper__listblock1__del} />
+            <FiX className={classNameListblockDel} />
         </div>
     );
 }
