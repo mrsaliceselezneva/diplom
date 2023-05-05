@@ -3,7 +3,6 @@ import styles from './styles.module.scss';
 
 const View = (props) => {
     const { time, teacher, list } = props;
-
     const block = (id) => id % 2 ? styles.wrapper__list__block0 : styles.wrapper__list__block1;
 
     return (
@@ -22,7 +21,7 @@ const View = (props) => {
                 {/* <div className={styles.wrapper__head__input}>
                     {input}
                 </div> */}
-                {list.map((el, id) => <div className={block(id)}>{el}</div>)}
+                {list.map((el, id) => <div className={block(id)} key={el + id}>{el}</div>)}
             </div>
         </div>
     )

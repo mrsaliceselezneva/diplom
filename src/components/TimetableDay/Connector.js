@@ -1,10 +1,16 @@
-
+import { useSelector } from 'react-redux';
 import Controller from './Controller';
 
+const Connector = (props) => {
+    const {weekday} = props;
+    const { linkFilter } = useSelector((state) => state.sidebarReducer);
 
-const Connector = () => (
-        <Controller
+    return (
+        <Controller 
+            weekday={weekday}
+            linkFilter={linkFilter}
         />
-    )
+    );
+}
 
 export default Connector;

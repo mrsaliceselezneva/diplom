@@ -1,38 +1,23 @@
 import TimetableBlock from 'components/TimetableBlock';
 import styles from './styles.module.scss';
 
-const mas = [
-    {
-        date: 'date',
-        time: 'time',
-        teacher: 'teacher',
-        input: 'input',
-        list: ['раз', 'два', 'три']
-    },
-    {
-        date: 'date',
-        time: 'time',
-        teacher: 'teacher',
-        input: 'input',
-        list: ['раз', 'два', 'три']
-    }
-];
-
-const View = () => (
-    <div className={styles.wrapper}>
-        <div className={styles.wrapper__day}>
-            {mas.map((val, id) =>
-                <TimetableBlock
-                    key={val.date + val.time + val.teacher + id}
-                    date={val.date}
-                    time={val.time}
-                    teacher={val.teacher}
-                    input={val.input}
-                    list={val.list}
-                />
-            )}
+const View = (props) => {
+    const { listLesson } = props;
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.wrapper__day}>
+                {listLesson.map((val, id) =>
+                    <TimetableBlock
+                        key={val.call + val.teacher + id}
+                        date={val.date}
+                        time={val.call}
+                        teacher={val.teacher}
+                        list={Array(...val.group)}
+                    />
+                )}
+            </div>
         </div>
-    </div>
-)
+    );
+};
 
 export default View;

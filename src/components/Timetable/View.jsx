@@ -10,7 +10,7 @@ const View = (props) => {
                     {weekdayList.map((weekday) => <div className={styles.wrapper__week__title__block} key={weekday}>{weekday}</div>)}
                 </div>
                 <div className={styles.wrapper__week__list}>
-                    {weekdayList.map((weekday) => <div className={styles.wrapper__week__list__block} key={weekday}><TimetableDay /></div>)}
+                    {weekdayList.map((weekday) => <div className={styles.wrapper__week__list__block} key={weekday}><TimetableDay weekday={weekday} /></div>)}
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import sendRequest from 'api/utils';
 import { useRef } from 'react';
 
 import { useDispatch } from 'react-redux';
@@ -20,15 +20,12 @@ const Controller = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         };
-        axios
-            .post(`${process.env.REACT_APP_API_URL}/token/`, data)
-            .then((response) => {
-                dispatch(setRefreshToken(response.data.refresh));
-                dispatch(setAccessToken(response.data.access));
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        sendRequest('/token/', 'post', data).then((responceData) => {
+            dispatch(setRefreshToken(responceData.refresh));
+                dispatch(setAccessToken(responceData.access));
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
     return (
