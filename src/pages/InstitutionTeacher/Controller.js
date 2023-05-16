@@ -1,4 +1,4 @@
-import AdminList from 'components/AdminList';
+import MissLessonList from 'components/MissLessonList';
 import Timetable from 'components/Timetable';
 
 import { useSelector } from 'react-redux';
@@ -11,7 +11,7 @@ const Controller = () => {
 
     function listOrTimeTable() {
         if (selectFilter === 'провести'){
-            return <AdminList />
+            return <MissLessonList />
         }
         if (selectFilter === 'расписание'){
             return <Timetable />

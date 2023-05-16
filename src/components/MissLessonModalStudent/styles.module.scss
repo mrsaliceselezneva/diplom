@@ -11,7 +11,8 @@
 
 @mixin block($c) {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     background-color: $c;
     width: 100%;
     padding: 6px;
@@ -103,6 +104,12 @@
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             margin-bottom: 0;
+        }
+
+        &__square {
+            margin-right: 0;
+            margin-left: auto;
+            cursor: pointer;
         }
     }
 }

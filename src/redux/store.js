@@ -14,6 +14,7 @@ import {
 import requestReducer from './slices/requestSlice';
 import tokenReducer from './slices/tokenSlice';
 import sidebarReducer from './slices/sidebarSlice';
+import missLessonReducer from './slices/missLessonSlice';
 
 
 const persistConfig = {
@@ -30,6 +31,7 @@ export const store = configureStore({
         requestReducer: requestPersistedReducer,
         tokenReducer: tokenPersistedReducer,
         sidebarReducer: sidebarPersistedReducer,
+        missLessonReducer,
     },
 
     middleware: (getDefaultMiddleware) =>

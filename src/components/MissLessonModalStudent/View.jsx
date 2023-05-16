@@ -1,3 +1,4 @@
+import MissLessonModalStudentCheck from "components/MissLessonModalStudentCheck";
 import styles from './styles.module.scss';
 
 
@@ -23,10 +24,12 @@ const View = (props) => {
                 </div>
             </div>
             <div className={styles.wrapper__list}>
-                {/* <div className={styles.wrapper__head__input}>
-                    {input}
-                </div> */}
-                {list.map((el, id) => <div className={block(id)} key={el + id}>{el}</div>)}
+                {list.map((el, id) =>
+                    <div className={block(id)} key={el.name + el.id}>
+                        {el.name}
+                        <MissLessonModalStudentCheck student={el} />
+                    </div>
+                )}
             </div>
         </div>
     )

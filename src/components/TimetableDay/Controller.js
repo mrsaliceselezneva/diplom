@@ -10,7 +10,7 @@ const Controller = (props) => {
     const [listLesson, setListLesson] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-     const getStudent = async (id) => {
+    const getStudent = async (id) => {
         const list = [];
         await sendRequest(`/student?group=${id}`, 'get').then((data) => {
             data.forEach((student) => list.push(`${student.last_name} ${student.first_name}`));
