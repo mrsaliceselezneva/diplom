@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { FiChevronsLeft, FiChevronsRight, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import styles from './Pagination.module.scss';
+import styles from './styles.module.scss';
 
 import {
     changePage,
@@ -82,6 +82,7 @@ function Pagination() {
                 }
             } else {
                 dispatch(changePage(selectPage - diff));
+
             }
         } else if (selectPage < mediumPage) {
             if (selectPage - diff >= 1) {
@@ -116,7 +117,7 @@ function Pagination() {
                 </div>
                 <div className={styles.wrapper__pagination__pages}>
                     {Array.from({ length: showPages }, (_, i) => firstPage + i).map(
-                        (element, id) => (
+                        (element) => (
                             <div
                                 key={element}
                                 onClick={() => clickPage(element)}

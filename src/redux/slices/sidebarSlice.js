@@ -18,6 +18,7 @@ const sidebarSlice = createSlice({
         setClear(state) {
             state.selectFilter = null;
             state.linkFilter = null;
+            state.paginationFilter = null;
         },
     },
 });

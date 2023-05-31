@@ -2,11 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     selectPage: 1,
-    numPages: 1,
+    numPages: 5,
     showPages: 5,
     firstPage: 1,
     mediumPage: 3,
     lastPage: 5,
+    showItems: 3,
 };
 
 const paginationSlice = createSlice({

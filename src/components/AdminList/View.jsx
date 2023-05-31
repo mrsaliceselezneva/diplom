@@ -1,5 +1,7 @@
 import ListBlock from 'components/ListBlock';
+import Pagination from 'components/Pagination/Pagination';
 import styles from './styles.module.scss';
+
 
 const View = (props) => {
     const { keys, dict, list } = props;
@@ -19,6 +21,7 @@ const View = (props) => {
                         <ListBlock id={id} key={val.id + id} keys={keys} val={val} />
                     )}
                 </div>
+                <Pagination />
             </div>
         </div>
     );

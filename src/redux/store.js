@@ -26,14 +26,15 @@ const persistConfig = {
 const requestPersistedReducer = persistReducer(persistConfig, requestReducer);
 const tokenPersistedReducer = persistReducer(persistConfig, tokenReducer);
 const sidebarPersistedReducer = persistReducer(persistConfig, sidebarReducer);
+const paginationPersistedReducer = persistReducer(persistConfig, paginationReducer);
 
 export const store = configureStore({
     reducer: {
         requestReducer: requestPersistedReducer,
         tokenReducer: tokenPersistedReducer,
         sidebarReducer: sidebarPersistedReducer,
+        paginationReducer: paginationPersistedReducer,
         missLessonReducer,
-        paginationReducer,
     },
 
     middleware: (getDefaultMiddleware) =>

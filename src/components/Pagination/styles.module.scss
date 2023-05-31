@@ -1,5 +1,12 @@
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+
+$background: #fefdfc;
+$border: rgba(0, 155, 118, 0.3);
+$select: #009b76;
+$arrow: #ff6e4a;
+
 @mixin text($w, $s, $l, $c) {
-    font-family: 'Inter';
+    font-family: 'Comfortaa';
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -9,21 +16,8 @@
 
 .wrapper {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     margin-left: auto;
-    margin-right: auto;
-
-    width: calc(280px * 4 + 30px * 3);
-    @media (max-width: 1400px) {
-        width: calc(280px * 3 + 30px * 2);
-    }
-    @media (max-width: 1030px) {
-        width: calc(280px * 2 + 30px * 1);
-    }
-    @media (max-width: 620px) {
-        width: calc(280px * 1 + 30px * 0);
-    }
+    margin-right: 0;
 
     &__pagination {
         display: flex;
@@ -33,7 +27,7 @@
         margin-right: 0;
         margin-top: 30px;
         position: relative;
-        @include text(600, 17px, 16px, #316650);
+        @include text(600, 17px, 16px, $select);
 
         &__pages {
             display: flex;
@@ -43,38 +37,38 @@
                 display: flex;
                 align-items: center;
                 height: 30px;
-                background-color: #fffff0;
+                background-color: $background;
                 border-radius: 20px;
-                border: solid 2px rgba(49, 102, 80, 0.3);
+                border: solid 2px $border;
                 margin-right: 0;
                 margin-left: auto;
                 padding-left: 5px;
                 padding-right: 5px;
-                @include text(600, 16px, 16px, #316650);
+                @include text(600, 16px, 16px, $select);
                 cursor: pointer;
             }
 
             &__block:hover {
-                background-color: #c5e080;
+                background-color: $border;
             }
 
             &__select_block {
                 display: flex;
                 align-items: center;
                 height: 30px;
-                background-color: #316650;
+                background-color: $select;
                 border-radius: 20px;
-                border: solid 2px rgba(49, 102, 80, 0.3);
+                border: solid 2px $border;
                 margin-right: 0;
                 margin-left: auto;
                 padding-left: 5px;
                 padding-right: 5px;
-                @include text(600, 16px, 16px, #fffff0);
+                @include text(600, 16px, 16px, $background);
                 cursor: pointer;
             }
 
             &__select_block:hover {
-                background-color: #c5e080;
+                background-color: $border;
             }
         }
 
@@ -82,19 +76,19 @@
             display: flex;
             align-items: center;
             height: 30px;
-            background-color: #fffff0;
+            background-color: $background;
             border-radius: 20px;
-            border: solid 2px rgba(49, 102, 80, 0.3);
+            border: solid 2px $border;
             margin-right: 0;
             margin-left: auto;
             padding-left: 5px;
             padding-right: 5px;
-            @include text(600, 18px, 16px, #316650);
+            @include text(600, 18px, 16px, $select);
             cursor: pointer;
         }
         &__arrow:hover {
-            background-color: #ff6e4a;
-            color: #fffff0;
+            background-color: $arrow;
+            color: $background;
         }
     }
 }
