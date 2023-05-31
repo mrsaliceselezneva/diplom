@@ -43,7 +43,7 @@ const View = forwardRef((props, ref) => {
                     />
 
                     <label className={styles.wrapper__institution__label}>
-                        <div
+                        <input
                             type="submit"
                             className={styles.wrapper__institution__label__submit}
                             value="Создать"

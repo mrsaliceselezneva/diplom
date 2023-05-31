@@ -10,7 +10,7 @@ const Controller = () => {
     const phoneRef = useRef(null);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    const teacherRef = useRef(false);
+    const teacherRef = useRef(true);
     const adminRef = useRef(false);
     
     const ref = {
@@ -23,11 +23,6 @@ const Controller = () => {
         teacherRef,
         adminRef
     };
-
-    const changeLastname = () => {lastNameRef.current.value = normalizeText(lastNameRef.current.value)}
-    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
-    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
-    const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}
 
     function createTeacher(){
         const data = {
@@ -45,6 +40,11 @@ const Controller = () => {
           
         sendRequest('/auth/users/', 'post', data);
     }
+
+    const changeLastname = () => {lastNameRef.current.value = normalizeText(lastNameRef.current.value)}
+    const changeName = () => {nameRef.current.value = normalizeText(nameRef.current.value)}
+    const changePatronymic = () => {patronymicRef.current.value = normalizeText(patronymicRef.current.value)}
+    const changePhone = () => {phoneRef.current.value = normalizePhone(phoneRef.current.value)}
 
     return (
         <View

@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 
 const View = (props) => {
     const { keys, dict, list } = props;
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__institution}>

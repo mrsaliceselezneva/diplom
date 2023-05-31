@@ -35,7 +35,7 @@ const Controller = () => {
             classroom_id: classroomId[classroomRef.current.value],
             group_id: groupId[groupRef.current.value],
             institution_id: 2,
-            weekday: weekdayRef.current.value
+            weekday: weekdayRef.current.value,
         };
         console.log(data);
         sendRequest('/lesson', 'post', data);
@@ -71,7 +71,7 @@ const Controller = () => {
     return (
         <View
             ref={ref}
-            create={() => createLesson()}
+            createLesson={() => createLesson()}
             teacherList={teacherList}
             callList={callList}
             classroomList={classroomList}

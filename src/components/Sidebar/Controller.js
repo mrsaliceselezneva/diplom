@@ -27,6 +27,12 @@ const Controller = () => {
                 { name: 'занятия', link: 'lesson?institution=2' },
             ]);
         }
+        if (window.location.href === `${process.env.REACT_APP_URL}/institution/teacher`) {
+            setFilters([
+                { name: 'провести', link: 'misslesson?teacher=13' },
+                { name: 'расписание', link: 'lesson?teacher=13' },
+            ]);
+        }
     }, [window.location.href]);
 
     return (

@@ -12,12 +12,12 @@ const Connector = (props) => {
 
     useEffect(() => {
         // eslint-disable-next-line no-restricted-syntax
-        for (const [, key] of Object.entries(keys.slice(0, sliceSize))) {
+        for (const [, key] of Object.entries(keys)) {
             if (key === 'institution_id') {
                 axios
                     .get(`${process.env.REACT_APP_API_URL}/institution/${val[key]}`)
                     .then((responce) => {
-                        setInst({ 'institution_id': responce.data.name, ...inst })
+                        setInst({ 'institution_id': responce.data.name });
                     });
             }
         }
@@ -26,7 +26,8 @@ const Connector = (props) => {
     return (
         <Controller 
             id={id}
-            keys={keys.slice(0, sliceSize)}
+            showKeys={keys.slice(0, sliceSize)}
+            keys={keys}
             val={val}
             inst={inst}
             getCurrentSquare={getCurrentSquare}

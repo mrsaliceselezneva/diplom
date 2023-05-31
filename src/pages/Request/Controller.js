@@ -1,4 +1,4 @@
-import axios from 'axios';
+import sendRequest from 'api/utils';
 import { useDispatch } from 'react-redux';
 
 import View from './View';
@@ -9,15 +9,9 @@ const Controller = (props) => {
     const {active, setActive, data} = props;
     const dispatch = useDispatch();
 
-    function sendRequest() {
-        axios.post(`${process.env.REACT_APP_API_URL}/request`, data).then(() => {
-            dispatch(setClear);
-        });
-    }
-
     return (
         <View 
-            sendRequest={() => sendRequest()}
+            sendRequest={() =>  sendRequest(`/request`, 'post', data).then(() => dispatch(setClear))}
             active={active}
             setActive={setActive}
 

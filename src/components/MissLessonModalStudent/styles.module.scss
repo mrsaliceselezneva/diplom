@@ -1,0 +1,115 @@
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
+
+@mixin text($w, $s, $l, $c) {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: $w;
+    font-size: $s;
+    line-height: $l;
+    color: $c;
+}
+
+@mixin block($c) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $c;
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    @include text(600, 14px, 16px, #009b76);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2px;
+
+            &__time {
+                display: flex;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: auto;
+                width: 50%;
+                height: 100%;
+                color: white;
+                background-color: #009b76;
+                border-top-left-radius: 8px;
+                border: 1px solid;
+                border-bottom-color: rgba(253, 244, 227, 1);
+                padding: 3px;
+                box-sizing: border-box;
+            }
+
+            &__date {
+                display: flex;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: auto;
+                width: 50%;
+                height: 100%;
+                color: white;
+                background-color: #ff6e4a;
+                border-top-right-radius: 8px;
+                border: 1px solid;
+                border-bottom-color: rgba(253, 244, 227, 1);
+                padding: 3px;
+                box-sizing: border-box;
+            }
+        }
+
+        &__teacher {
+            display: flex;
+            flex-direction: column;
+            background-color: #fdf4e3;
+            width: 100%;
+            margin-bottom: 2px;
+            padding: 6px;
+            box-sizing: border-box;
+            border: solid 2px #009b764d;
+            @include text(600, 14px, 16px, #009b76);
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        border: solid 2px #009b764d;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 10px;
+
+        &__block0 {
+            @include block(#fdf4e3);
+        }
+
+        &__block0:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 0;
+        }
+
+        &__block1 {
+            @include block(#f7e0b5);
+        }
+
+        &__block1:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 0;
+        }
+
+        &__square {
+            margin-right: 0;
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+}
