@@ -16,7 +16,7 @@ const View = forwardRef((props, ref) => {
                         title="фамилия"
                         type="text"
                         placeholder="Фамилия"
-                        ref={ref.lastnameRef}
+                        ref={ref.lastNameRef}
                         onChange={changeLastname}
                     />
 

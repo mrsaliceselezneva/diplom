@@ -1,7 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic");
+@import url('http://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic');
 
 @mixin text($w, $s, $l, $c) {
-    font-family: "Comfortaa";
+    font-family: 'Comfortaa';
     font-style: normal;
     font-weight: $w;
     font-size: $s;
@@ -50,6 +50,10 @@
         border: solid 2px rgba(0, 155, 118, 0.3);
         box-sizing: border-box;
         cursor: pointer;
+    }
+
+    &__del:hover {
+        background-color: rgba(49, 102, 80, 0.3);
     }
 }
 

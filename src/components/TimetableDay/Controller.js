@@ -22,6 +22,7 @@ const Controller = (props) => {
     useEffect(() => {
         setIsLoading(true);
         sendRequest('/lesson?teacher=13', 'get').then((data) => {
+            console.log(data);
             const mas = [];
             data.forEach(async (lesson) => {
                 if (lesson.weekday === weekday) {

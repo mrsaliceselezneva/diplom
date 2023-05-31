@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 const View = (props) => {
     const { listLesson } = props;
-    console.log(listLesson)
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__day}>
